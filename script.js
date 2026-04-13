@@ -1,18 +1,25 @@
-// Smooth Scrolling für Navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+// ===== LANGUAGE SWITCHER =====
+const btnDe = document.getElementById('lang-de');
+const btnEn = document.getElementById('lang-en');
 
-// Form Handling
-const form = document.querySelector('form');
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    alert(`Danke, ${name}! Wir kontaktieren dich unter ${email}.`);
-});
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+
+  // Update nav links & translatable elements
+  document.querySelectorAll('[data-de][data-en]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+
+  // Update active button
+  btnDe.classList.toggle('active', lang === 'de');
+  btnEn.classList.toggle('active', lang === 'en');
+
+  localStorage.setItem('lang', lang);
+}
+
+btnDe.addEventListener('click', () => setLang('de'));
+btnEn.addEventListener('click', () => setLang('en'));
+
+// Restore saved language
+const savedLang = localStorage.getItem('lang') || 'en';
+setLang(savedLang);

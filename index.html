@@ -1,50 +1,82 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en" data-lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mein Portfolio</title>
+  <title>Bilal Acil – Fullstack Developer</title>
+  <link rel="icon" type="image/png" href="assets/images/Bilal_Logo.png">
   <link rel="stylesheet" href="styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-  <header>
-    <h1>Willkommen auf meinem Portfolio</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">Über mich</a></li>
-        <li><a href="#projects">Projekte</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="about">
-      <h2>Über mich</h2>
-      <p>Hier steht etwas über dich. Passe es an dein Figma-Design an.</p>
-    </section>
-    <section id="projects">
-      <h2>Projekte</h2>
-      <div class="project">
-        <h3>Projekt 1</h3>
-        <p>Beschreibung des Projekts.</p>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <!-- Photo -->
+      <div class="hero-photo">
+        <div class="photo-oval">
+          <img src="assets/images/Bilal_Acil.png" alt="Bilal Acil">
+        </div>
       </div>
-    </section>
-    <section id="contact">
-      <h2>Kontakt</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email">
-        <button type="submit">Senden</button>
-      </form>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2026 Mein Name</p>
-  </footer>
+
+      <!-- Text -->
+      <div class="hero-text">
+        <div class="hero-logo">
+          <img src="assets/images/Bilal_Logo.png" alt="B.Acil Logo" class="hero-logo-icon">
+          <h1 class="hero-name">BILAL ACIL</h1>
+          <div>
+            <h2 class="hero-title" data-de="FULLSTACK ENTWICKLER" data-en="FULLSTACK DEVELOPER">FULLSTACK DEVELOPER</h2>
+          </div>
+        </div>
+        <div>
+
+        </div>
+        <div class="scroll-indicator">
+          <i class="fas fa-arrow-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social icons -->
+    <div class="social-icons">
+      <a href="https://github.com/BilalAcil" target="_blank" class="social-icon" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/bilal-acil" target="_blank" class="social-icon" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="nav-logo-icon"><img src="./assets/images/Bilal_Logo_2.png" alt=""></span>
+      <span class="nav-logo-text">B.Acil</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#why-me" data-de="Über mich" data-en="Why me">Why me</a></li>
+      <li><a href="#skills" data-de="Skills" data-en="Skills">Skills</a></li>
+      <li><a href="#projects" data-de="Projekte" data-en="Projects">Projects</a></li>
+      <li><a href="#contact" data-de="Kontakt" data-en="Contact">Contact</a></li>
+    </ul>
+
+    <div class="lang-switcher">
+      <button class="lang-btn" id="lang-de">DE</button>
+      <button class="lang-btn active" id="lang-en">EN</button>
+    </div>
+  </nav>
+
   <script src="script.js"></script>
 </body>
 
