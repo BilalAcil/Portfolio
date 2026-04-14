@@ -174,31 +174,61 @@ body {
   position: absolute;
   right: 44px;
   top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
+.social-icons a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--blue);
+}
+
+.social-icons a:hover {
+  background-color: var(--blue);
+}
+
+.rectangle-185 {
+  z-index: 999;
+  transition: opacity 0.2s;
+}
+
+.social-icon:hover .rectangle-185 {
+  opacity: 0;
+}
+
+.vector-32 {
+  background-color: var(--bg);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 20px;
+  height: 14px;
+}
+
+.vector-32 img {
+  width: 18px;
+  height: auto;
+}
+
+
 .social-icon {
-  width: 46px;
-  height: 46px;
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  border-radius: 50%;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: border-color 0.3s, color 0.3s, transform 0.2s;
+  border-radius: 50%;
 }
 
-.social-icon:hover {
-  border-color: var(--blue);
-  color: var(--blue);
-  transform: scale(1.1);
+.social-icon img {
+  display: block;
+  transition: none;
+  width: 20px;
 }
+
 
 /* ===== NAVBAR ===== */
 .navbar {
