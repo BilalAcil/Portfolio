@@ -182,7 +182,6 @@ body {
 .social-icons a {
   width: 30px;
   height: 30px;
-  border: 1px solid var(--blue);
 }
 
 .social-icons a:hover {
@@ -199,8 +198,16 @@ body {
   opacity: 0;
 }
 
-.vector-32 {
+.social-icon:hover .vector-32 {
+  border-radius: 1px;
   background-color: var(--bg);
+}
+
+.mail {
+  border: 1px solid var(--blue);
+}
+
+.vector-32 {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -216,8 +223,36 @@ body {
 
 .github-button {
   width: 30px;
+  height: 29px;
+  background-color: rgb(133, 183, 211);
+  mask-image: url('./assets/icons/Github button.png');
+  -webkit-mask-image: url('./assets/icons/Github button.png');
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  transition: background-color 0.2s;
 }
 
+.social-icon:hover .github-button {
+  background-color: rgb(38, 46, 52);
+}
+
+.github-elipse {
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 2.8px solid var(--blue);
+  border-radius: 50%;
+}
+
+.social-icon:hover .github-elipse {
+  opacity: 1;
+  z-index: 999;
+}
 
 .social-icon {
   z-index: 999;
