@@ -48,6 +48,8 @@ body {
 .hero {
   position: relative;
   width: 100%;
+  max-width: 1200px;
+  max-height: 700px;
   height: calc(100vh - 80px);
   display: flex;
   align-items: center;
@@ -223,7 +225,7 @@ body {
 
 .github-button {
   width: 30px;
-  height: 29px;
+  height: 30px;
   background-color: rgb(133, 183, 211);
   mask-image: url('./assets/icons/Github button.png');
   -webkit-mask-image: url('./assets/icons/Github button.png');
@@ -233,10 +235,27 @@ body {
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
   -webkit-mask-position: center;
-  transition: background-color 0.2s;
 }
 
 .social-icon:hover .github-button {
+  background-color: rgb(38, 46, 52);
+}
+
+.linkedin-button {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(133, 183, 211);
+  mask-image: url('./assets/icons/Linkedin button.png');
+  -webkit-mask-image: url('./assets/icons/Linkedin button.png');
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
+.social-icon:hover .linkedin-button {
   background-color: rgb(38, 46, 52);
 }
 
@@ -250,6 +269,20 @@ body {
 }
 
 .social-icon:hover .github-elipse {
+  opacity: 1;
+  z-index: 999;
+}
+
+.linkedin-elipse {
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 1.3px solid var(--blue);
+  border-radius: 50%;
+}
+
+.social-icon:hover .linkedin-elipse {
   opacity: 1;
   z-index: 999;
 }
