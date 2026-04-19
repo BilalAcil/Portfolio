@@ -58,10 +58,10 @@ body {
 }
 
 .hero-content {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   height: calc(100% - 40px);
   margin-top: 40px;
-  flex: 1;
   display: flex;
 }
 
@@ -164,7 +164,7 @@ body {
 /* Name */
 .hero-name {
   font-family: 'Anta', sans-serif;
-  font-size: 88px;
+  font-size: clamp(48px, 6.1vw, 88px);
   font-weight: 400;
   color: var(--white);
   letter-spacing: 2px;
@@ -173,7 +173,7 @@ body {
 /* Title */
 .hero-title {
   font-family: 'JosefinSans', sans-serif;
-  font-size: 40px;
+  font-size: clamp(22px, 2.8vw, 40px);
   font-weight: 400;
   color: var(--white);
 }
