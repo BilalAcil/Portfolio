@@ -155,7 +155,7 @@ body {
   cursor: default;
 }
 
-.hero-logo-icon:hover {
+.logo-label:hover .hero-logo-icon {
   transform: rotateY(180deg);
 }
 
@@ -175,7 +175,7 @@ body {
   letter-spacing: 2px;
   font-weight: 400;
   backface-visibility: hidden;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
 }
 
 .label-back {
@@ -183,11 +183,11 @@ body {
   transform: rotateY(-180deg);
 }
 
-.logo-container:hover .label-front {
+.logo-label:hover .label-front {
   transform: rotateY(180deg);
 }
 
-.logo-container:hover .label-back {
+.logo-label:hover .label-back {
   transform: rotateY(0deg);
 }
 
@@ -220,6 +220,12 @@ body {
   width: 38px;
   height: 89px;
   color: var(--blue);
+  border-radius: 30px;
+  transition: background 0.4s ease;
+}
+
+.scroll-indicator img:hover {
+  background: #ffffff2b;
 }
 
 .scroll-indicator i {
