@@ -453,7 +453,6 @@ body {
 
 .nav-links li {
   width: 121px;
-  height: 31px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -477,9 +476,30 @@ body {
   font-family: 'JosefinSans', sans-serif;
   font-size: 18px;
   font-weight: 400;
+  line-height: 1;
   color: var(--bg);
   cursor: pointer;
   padding: 4px 6px;
+}
+
+.lang-btn div {
+  position: relative;
+  width: 36.8px;
+  height: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.lang-btn div::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/icons/Ellipse 24.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
 }
 
 .lang-btn:not(.active):hover {
@@ -487,37 +507,34 @@ body {
   cursor: pointer;
 }
 
-.lang-switcher:has(.lang-btn:not(.active):hover) .lang-btn.active {
+.lang-switcher:has(.lang-btn:not(.active):hover) .lang-btn.active div {
   background-image: none;
+}
+
+.lang-switcher:has(.lang-btn:not(.active):hover) .lang-btn.active {
   color: var(--bg);
 }
 
 .lang-btn.active:hover {
-  background-image: url('assets/icons/Ellipse 24.png');
-  color: var(--white);
   cursor: default;
+  color: var(--white);
 }
 
 .lang-btn.active {
-  opacity: 1;
   color: var(--white);
-  width: 36.8px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
-  background-image: url('assets/icons/Ellipse 24.png');
-  transition: color 0.4s ease, opacity 0.4s ease;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  transition: color 0.4s ease;
 }
 
-.lang-btn.active::after {
-  content: '';
-  display: block;
-  height: 2px;
-  background-color: var(--nav-text);
-  border-radius: 2px;
+.lang-btn.active div {
+  width: 36.8px;
+  height: 24px;
+}
+
+.lang-btn.active div::before {
+  opacity: 1;
+}
+
+.lang-switcher:has(.lang-btn:not(.active):hover) .lang-btn.active div::before {
+  opacity: 0;
 }
