@@ -389,15 +389,25 @@ body {
 .navbar {
   position: fixed;
   bottom: 0;
-  width: 100%;
-  max-width: 1440px;
+  width: 100vw;
   height: 104px;
   background-color: var(--blue);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 109px;
   z-index: 100;
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 /* Nav logo */
@@ -442,7 +452,7 @@ body {
 }
 
 .nav-links li {
-  width: 100px;
+  width: 121px;
   height: 31px;
   display: flex;
   align-items: center;

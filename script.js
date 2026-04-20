@@ -7,6 +7,7 @@ function setLang(lang) {
 
   // Update nav links & translatable elements
   document.querySelectorAll('[data-de][data-en]').forEach(el => {
+    if (el.getAttribute('translate') === 'no') return;
     el.textContent = el.getAttribute(`data-${lang}`);
   });
 
