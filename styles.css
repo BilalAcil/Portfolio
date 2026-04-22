@@ -551,7 +551,6 @@ body {
 
 .why-me {
   width: 100%;
-  height: 1000px;
   display: flex;
   justify-content: center;
 }
@@ -638,6 +637,56 @@ h3 {
 
 .talk-button-container img:hover {
   background: #ffffff2b;
+}
+
+.my-skills {
+  width: 100%;
+  height: 560px;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.my-skills-container {
+  width: 870px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my-skills-left-right {
+  height: 404px;
+}
+
+.my-skills-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my-skills-left img {
+  height: 100px;
+}
+
+.my-skills-right {
+  width: 50%;
+}
+
+.icon-conatainer {
+  display: flex;
+  width: 100%;
+}
+
+.icon-conatainer div {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+.opacity {
+  opacity: 0.3;
 }
 
 @keyframes blink {
