@@ -75,3 +75,17 @@ function type() {
 }
 
 type();
+
+// ===== PROJECTS TABS =====
+const projectTabs = document.querySelectorAll('.project-tab');
+const projectPanels = document.querySelectorAll('.project-panel');
+
+projectTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const index = parseInt(tab.dataset.tab);
+    projectTabs.forEach(t => t.classList.remove('active'));
+    projectPanels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    projectPanels[index].classList.add('active');
+  });
+});
