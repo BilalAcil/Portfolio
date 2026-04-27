@@ -783,7 +783,6 @@ h3 {
 }
 
 .opacity::after {
-  content: 'Planned';
   position: absolute;
   bottom: -18px;
   left: 50%;
@@ -985,10 +984,9 @@ h3 {
 }
 
 .panel-screenshot--soon span {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'JosefinSans', sans-serif;
   color: var(--blue);
-  font-size: 18px;
-  letter-spacing: 2px;
+  font-size: 30px;
 }
 
 .panel-buttons {
