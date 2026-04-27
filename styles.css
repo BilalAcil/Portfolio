@@ -402,7 +402,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 109px;
+  padding: 0 100px;
   z-index: 100;
 }
 
@@ -805,17 +805,34 @@ h3 {
 /* ===== PROJECTS ===== */
 .my-projects {
   width: 100%;
-  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projects-container h3 {
+  width: 100vw;
   margin-bottom: 100px;
 }
 
 .project-tabs {
   display: flex;
+  width: 100%;
+  max-width: 1440px;
   gap: 4px;
   margin-left: 100px;
+}
+
+.project-tabs-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .project-tab {
@@ -834,7 +851,7 @@ h3 {
 
 .project-tab.active {
   color: var(--white);
-  background: #2a3540;
+  background: #2D383F;
   cursor: default;
 }
 
@@ -843,9 +860,12 @@ h3 {
 }
 
 .project-panels {
-  background: #2a3540;
-  border-radius: 0 10px 10px 10px;
-  padding: 48px;
+  width: 100%;
+  max-width: 1440px;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  background: #2D383F;
 }
 
 .project-panel {
@@ -853,36 +873,37 @@ h3 {
 }
 
 .project-panel.active {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 32px 48px;
+  padding: 50px 100px;
+  display: flex;
 }
 
 .panel-left {
   display: flex;
   flex-direction: column;
+  width: 50%;
   gap: 28px;
 }
 
 .project-block {
   display: flex;
-  gap: 16px;
   align-items: flex-start;
+  gap: 16px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 .project-dot {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--blue);
-  flex-shrink: 0;
-  margin-top: 3px;
+  min-width: 29px;
+  min-height: 26px;
+  background-image: url('assets/icons/Ellipse 8.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .project-block h4 {
   font-family: 'JosefinSans', sans-serif;
-  font-size: clamp(14px, 1.3vw, 18px);
+  font-size: 28px;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 8px;
@@ -901,26 +922,28 @@ h3 {
 }
 
 .project-block p {
-  font-size: 15px;
-  color: var(--muted);
-  line-height: 1.65;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 18px;
+  color: var(--white);
+  line-height: 1.2;
 }
 
 .panel-right {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 14px;
 }
 
 .panel-tech {
   width: 100%;
-  text-align: right;
+  text-align: center;
 }
 
 .panel-tech>span {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 18px;
   color: var(--white);
   display: block;
   margin-bottom: 10px;
@@ -929,25 +952,26 @@ h3 {
 
 .tech-icons {
   display: flex;
-  gap: 10px;
-  justify-content: flex-end;
+  gap: 40px;
+  justify-content: center;
 }
 
 .tech-icons img {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 36px;
   object-fit: contain;
 }
 
 .panel-screenshot {
-  width: 100%;
-  border-radius: 14px;
+  width: 500px;
+  min-height: 290px;
+  border-radius: 30px;
   overflow: hidden;
 }
 
 .panel-screenshot img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   border-radius: 14px;
 }
@@ -968,10 +992,11 @@ h3 {
 }
 
 .panel-buttons {
-  grid-column: 1 / -1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 20px;
+  align-items: center;
+  height: 100%;
 }
 
 .btn-live {
@@ -979,15 +1004,15 @@ h3 {
   border-radius: 30px;
   background: var(--blue);
   color: var(--nav-text);
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 18px;
   text-decoration: none;
   letter-spacing: 1px;
   transition: background 0.3s ease;
 }
 
 .btn-live:hover {
-  background: var(--blue-light);
+  background: var(--white)
 }
 
 .btn-gh {
@@ -995,16 +1020,15 @@ h3 {
   border-radius: 30px;
   border: 2px solid var(--blue);
   color: var(--blue);
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 18px;
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
 
 .btn-gh:hover {
-  background: var(--blue);
-  color: var(--nav-text);
+  background: #ffffff2b;
 }
 
 @keyframes blink {
