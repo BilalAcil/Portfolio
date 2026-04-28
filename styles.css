@@ -1054,3 +1054,110 @@ h3 {
     opacity: 0;
   }
 }
+
+/* ===== REFERENCES ===== */
+.references {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 150px 109px;
+}
+
+.references-container {
+  width: 100%;
+  height: 480px;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.references-container h3 {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 32px;
+  line-height: 120%;
+  color: var(--blue);
+  text-align: center;
+  font-weight: 400;
+}
+
+.references-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.reference-card {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 36px;
+  gap: 10px;
+}
+
+.reference-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/icons/Ellipse 02.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.07;
+  transition: opacity 0.8s ease, filter 0.8s ease;
+  border-radius: 50%;
+}
+
+.reference-card:hover::before {
+  transform: scaleX(-1);
+  filter: brightness(1.6) sepia(0.8) hue-rotate(180deg) saturate(4);
+}
+
+.reference-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ref-name {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.ref-project {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: clamp(13px, 1vw, 15px);
+  color: var(--white);
+  font-weight: 400;
+}
+
+.ref-project span {
+  color: var(--blue);
+}
+
+.ref-quote {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: clamp(12px, 0.9vw, 14px);
+  color: var(--white);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.ref-linkedin {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: clamp(11px, 0.85vw, 13px);
+  color: var(--blue);
+  text-decoration: underline;
+  margin-top: 4px;
+}
