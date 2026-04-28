@@ -824,7 +824,7 @@ h3 {
   display: flex;
   width: 100%;
   max-width: 1440px;
-  gap: 4px;
+  gap: 12px;
   margin-left: 100px;
 }
 
@@ -900,12 +900,18 @@ h3 {
   background-position: center;
 }
 
+.project-div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
 .project-block h4 {
   font-family: 'JosefinSans', sans-serif;
   font-size: 28px;
   font-weight: 400;
   color: var(--white);
-  margin-bottom: 8px;
   display: flex;
   align-items: baseline;
   gap: 16px;
@@ -918,6 +924,14 @@ h3 {
   color: var(--muted);
   font-weight: 400;
   letter-spacing: 0.5px;
+}
+
+.h4-bottom {
+  margin-bottom: 8px;
+}
+
+.d-none {
+  display: none;
 }
 
 .project-block p {
