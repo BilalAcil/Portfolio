@@ -14,6 +14,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'JosefinSans';
+  src: url('assets/fonts/JosefinSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 /* ===== RESET & VARIABLES ===== */
 *,
 *::before,
@@ -1086,15 +1093,15 @@ h3 {
 .references-cards {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  gap: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .reference-card {
   position: relative;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
+  width: 400px;
+  height: 400px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1102,62 +1109,77 @@ h3 {
   justify-content: center;
   text-align: center;
   padding: 40px 36px;
-  gap: 10px;
+  gap: 6px;
 }
 
-.reference-card::before {
+.reference-card::before,
+.reference-card::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('assets/icons/Ellipse 02.png');
   background-size: cover;
   background-position: center;
+}
+
+.reference-card::before {
+  background-image: url('assets/icons/Ellipse 02.png');
   opacity: 0.07;
-  transition: opacity 0.8s ease, filter 0.8s ease;
-  border-radius: 50%;
+  transition: opacity 0.5s ease;
+}
+
+.reference-card::after {
+  background-image: url('assets/icons/Ellipse 01.png');
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .reference-card:hover::before {
-  transform: scaleX(-1);
-  filter: brightness(1.6) sepia(0.8) hue-rotate(180deg) saturate(4);
+  opacity: 0;
 }
 
-.reference-card > * {
+.reference-card:hover::after {
+  opacity: 0.15;
+}
+
+.reference-card>* {
   position: relative;
   z-index: 1;
 }
 
 .ref-name {
   font-family: 'JosefinSans', sans-serif;
-  font-size: clamp(16px, 1.4vw, 20px);
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 600;
   color: var(--white);
-  letter-spacing: 0.5px;
 }
 
 .ref-project {
   font-family: 'JosefinSans', sans-serif;
-  font-size: clamp(13px, 1vw, 15px);
+  font-size: 18px;
   color: var(--white);
   font-weight: 400;
 }
 
-.ref-project span {
+.project-name {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 18px;
   color: var(--blue);
+  font-weight: 400;
 }
 
 .ref-quote {
+  height: 120px;
+  margin-top: 20px;
   font-family: 'JosefinSans', sans-serif;
-  font-size: clamp(12px, 0.9vw, 14px);
+  font-size: 18px;
   color: var(--white);
-  line-height: 1.6;
-  font-style: italic;
+  line-height: 120%;
+  font-weight: 400;
 }
 
 .ref-linkedin {
   font-family: 'JosefinSans', sans-serif;
-  font-size: clamp(11px, 0.85vw, 13px);
+  font-size: 16px;
   color: var(--blue);
   text-decoration: underline;
-  margin-top: 4px;
 }
