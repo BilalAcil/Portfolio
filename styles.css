@@ -1268,6 +1268,24 @@ h3 {
 
 .contact-mail-icon img {
   width: 15px;
+  position: absolute;
+}
+
+.mail-default {
+  opacity: 1;
+}
+
+.mail-hover {
+  opacity: 0;
+}
+
+.contact-info-item:hover .mail-default {
+  opacity: 0;
+}
+
+.contact-info-item:hover .mail-hover {
+  width: 18px;
+  opacity: 1;
 }
 
 .contact-info-item:hover .contact-mail-icon {
