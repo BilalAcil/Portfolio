@@ -186,10 +186,12 @@
           <p class="ref-project"><span data-de="Projekt" data-en="Project"></span> <span
               class="project-name">Join</span>
           </p>
-          <p class="ref-quote">"Bilal hat nicht nur seine eigenen Aufgaben zuverlässig erledigt, sondern auch das Team
-            im Blick behalten und dort unterstützt, wo es nötig war."</p>
-          <a href="https://www.linkedin.com/in/stefan-helldobler-b51386388" target="_blank" class="ref-linkedin">Linked
-            In Profile</a>
+          <p class="ref-quote"
+            data-de='"Bilal hat nicht nur seine eigenen Aufgaben zuverlässig erledigt, sondern auch das Team im Blick behalten und dort unterstützt, wo es nötig war."'
+            data-en='"Bilal didn&#39;t just reliably handle his own tasks — he also kept an eye on the team and stepped in wherever support was needed."'>
+          </p>
+          <a href="https://www.linkedin.com/in/stefan-helldobler-b51386388" target="_blank" class="ref-linkedin"
+            data-de="LinkedIn Profil" data-en="LinkedIn Profile"></a>
         </div>
 
         <div class="reference-card">
@@ -197,10 +199,11 @@
           <p class="ref-project"><span data-de="Projekt" data-en="Project"></span> <span
               class="project-name">Join</span>
           </p>
-          <p class="ref-quote">"Sorgte für klare Transparenz im Teamfortschritt und hat Probleme früh erkannt und
-            gelöst."</p>
-          <a href="https://www.linkedin.com/in/leon-könig-577710388" target="_blank" class="ref-linkedin">Linked In
-            Profile</a>
+          <p class="ref-quote"
+            data-de='"Sorgte für klare Transparenz im Teamfortschritt und hat Probleme früh erkannt und gelöst."'
+            data-en='"He ensured clear transparency in team progress and identified and resolved issues early on."'></p>
+          <a href="https://www.linkedin.com/in/leon-könig-577710388" target="_blank" class="ref-linkedin"
+            data-de="LinkedIn Profil" data-en="LinkedIn Profile"></a>
         </div>
 
         <div class="reference-card">
@@ -208,16 +211,72 @@
           <p class="ref-project"><span data-de="Projekt" data-en="Project"></span> <span
               class="project-name">Join</span>
           </p>
-          <p class="ref-quote">"Die Kommunikation mit Bilal war top: klar, direkt und immer auf den Punkt. Das hat das
-            Team wirklich vorangebracht."</p>
-          <a href="https://www.linkedin.com/in/steven-bracke-3594a822b" target="_blank" class="ref-linkedin">Linked In
-            Profile</a>
+          <p class="ref-quote"
+            data-de='"Die Kommunikation mit Bilal war top: klar, direkt und immer auf den Punkt. Das hat das Team wirklich vorangebracht."'
+            data-en='"Communication with Bilal was excellent: clear, direct and always to the point. That really moved the team forward."'>
+          </p>
+          <a href="https://www.linkedin.com/in/steven-bracke-3594a822b" target="_blank" class="ref-linkedin"
+            data-de="LinkedIn Profil" data-en="LinkedIn Profile"></a>
         </div>
 
       </div>
     </div>
   </section>
 
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <h3 data-de="Kontaktiere mich" data-en="Contact me"></h3>
+      <div class="contact-top">
+        <p class="contact-intro"
+          data-de="Auf der Suche nach spannenden Herausforderungen, Projekten oder neuen Chancen. Ich freue mich über Nachrichten zu Vollzeit-, Teilzeit- oder Freelance-Positionen."
+          data-en="Seeking exciting challenges, projects, and new opportunities. I welcome messages regarding full-time, part-time, or freelance positions">
+        </p>
+        <div class="contact-info">
+          <div class="contact-info-item" style="cursor: pointer;">
+            <div class="contact-mail-icon"><img src="./assets/icons/mail-1.png" alt=""></div>
+            <span>bilal-acil@web.de</span>
+          </div>
+          <div class="contact-info-item" style="cursor: default;">
+            <div class="contact-info-icon contact-phone-icon"></div>
+            <span data-de="Tel: auf Anfrage" data-en="Tel: on request"></span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-de="Dein Name" data-en="Your name"></label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label data-de="Deine E-Mail" data-en="Your Email"></label>
+            <input type="email" name="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-de="Deine Nachricht" data-en="Your Message"></label>
+          <textarea name="message" rows="6" required></textarea>
+        </div>
+        <div class="form-footer">
+          <div class="form-checkbox">
+            <input type="checkbox" id="privacy" required>
+            <label for="privacy">
+              <span data-de="Ich habe die " data-en="I've read the "></span><a href="#" class="privacy-link"
+                data-de="Datenschutzerklärung" data-en="privacy policy"></a><span
+                data-de=" gelesen und stimme der Verarbeitung meiner Daten zu."
+                data-en=" and agree to the processing of my data as outlined."></span>
+            </label>
+          </div>
+          <button type="submit" class="btn-send" data-de="Senden" data-en="Send"></button>
+        </div>
+      </form>
+    </div>
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      <span>↑</span>
+    </button>
+  </section>
 
   <script src="script.js"></script>
 </body>

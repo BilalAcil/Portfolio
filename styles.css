@@ -1067,7 +1067,7 @@ h3 {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 150px 109px;
+  padding: 150px 109px 5px;
 }
 
 .references-container {
@@ -1182,4 +1182,235 @@ h3 {
   font-size: 16px;
   color: var(--blue);
   text-decoration: underline;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 150px 109px 10px;
+}
+
+.contact-container {
+  max-width: 1440px;
+  width: 900px;
+  height: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.contact h3 {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 400;
+  color: var(--blue);
+  text-align: center;
+}
+
+.contact-top {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.contact-intro {
+  width: 50%;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 18px;
+  color: var(--white);
+  line-height: 120%;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: clamp(14px, 1.1vw, 17px);
+  color: var(--white);
+}
+
+.contact-info-icon {
+  width: 28px;
+  height: 28px;
+  background-color: var(--white);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  flex-shrink: 0;
+}
+
+.contact-mail-icon {
+  background-image: url('./assets/icons/mail.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 22px;
+  height: 20px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.contact-mail-icon img {
+  width: 15px;
+}
+
+.contact-info-item:hover .contact-mail-icon {
+  background-image: none;
+  background-color: var(--blue);
+}
+
+.contact-info-item:hover span {
+  color: var(--blue);
+}
+
+.contact-phone-icon {
+  mask-image: url('https://api.iconify.design/lucide/phone.svg');
+  -webkit-mask-image: url('https://api.iconify.design/lucide/phone.svg');
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.form-group label {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 14px;
+  color: var(--blue);
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: 1.5px solid var(--blue);
+  border-radius: 30px;
+  padding: 14px 22px;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.form-group textarea {
+  border-radius: 20px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--white);
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--blue);
+  border-radius: 50%;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-checkbox input[type="checkbox"]:checked {
+  background-color: var(--blue);
+}
+
+.form-checkbox label {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 14px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.privacy-link {
+  color: var(--blue);
+}
+
+.btn-send {
+  background: transparent;
+  border: 1.5px solid var(--blue);
+  border-radius: 30px;
+  padding: 12px 36px;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 16px;
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-send:hover {
+  background: var(--blue);
+  color: var(--nav-text);
+}
+
+/* Back to top */
+.back-to-top {
+  position: absolute;
+  top: 80px;
+  right: 109px;
+  width: 52px;
+  height: 80px;
+  border: 1.5px solid var(--blue);
+  border-radius: 30px;
+  background: transparent;
+  color: var(--blue);
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: var(--blue);
+  color: var(--nav-text);
 }
