@@ -74,8 +74,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <span class="nav-logo-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><img
-            src="./assets/images/Bilal_Logo_3.png" alt=""></span>
+        <span class="nav-logo-icon" onclick="springScroll(0)"><img src="./assets/images/Bilal_Logo_3.png" alt=""></span>
         <span class="nav-logo-text">B.Acil</span>
       </div>
 
@@ -97,7 +96,7 @@
     </div>
   </nav>
 
-  <section class="why-me">
+  <section class="why-me" id="why-me">
     <div class="why-me-container">
       <h3 data-de="Über mich" data-en="Why me"></h3>
       <div class="why-me-info">
@@ -120,7 +119,7 @@
     </div>
   </section>
 
-  <section class="my-skills">
+  <section class="my-skills" id="skills">
     <div class="my-skills-container">
       <h3>My Skills</h3>
       <div class="my-skills-left-right">
@@ -276,7 +275,7 @@
         </div>
       </form>
     </div>
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <button class="back-to-top" onclick="springScroll(0)">
       <span>↑</span>
     </button>
   </section>

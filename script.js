@@ -1,3 +1,25 @@
+// ===== SPRING SCROLL =====
+function springScroll(targetY, duration = 900) {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  function easeOutBack(t) {
+    const c1 = 1.70158;
+    const c3 = c1 + 1;
+    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+  }
+
+  function step(ts) {
+    if (!startTime) startTime = ts;
+    const progress = Math.min((ts - startTime) / duration, 1);
+    window.scrollTo(0, startY + distance * easeOutBack(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
 // ===== LANGUAGE SWITCHER =====
 const btnDe = document.getElementById('lang-de');
 const btnEn = document.getElementById('lang-en');
@@ -243,6 +265,26 @@ renderProjects();
 const savedLang = localStorage.getItem('lang') || 'en';
 setLang(savedLang);
 
+// ===== SCROLL ANCHORS =====
+const scrollAnchors = {
+  '#why-me': 650,
+  '#skills': 1200,
+  '#projects': 1900,
+  '#contact': 3500,
+};
+
+document.querySelector('.scroll-indicator img').addEventListener('click', () => {
+  springScroll(scrollAnchors['#why-me']);
+});
+
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const y = scrollAnchors[link.getAttribute('href')];
+    if (y !== undefined) springScroll(y);
+  });
+});
+
 // ===== PRIVACY OVERLAY =====
 const privacyOverlay = document.getElementById('privacy-overlay');
 const privacyTrigger = document.getElementById('privacy-trigger');
@@ -272,20 +314,20 @@ const sendBtn = form.querySelector('.btn-send');
 const privacyCheckbox = document.getElementById('privacy');
 
 const validators = {
-  name:    v => v.trim().length >= 2,
-  email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+  name: v => v.trim().length >= 2,
+  email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
   message: v => v.trim().length >= 10,
 };
 
 const errorTexts = {
   de: {
-    name:    'Bitte gib deinen Namen ein (mind. 2 Zeichen).',
-    email:   'Bitte gib eine gültige E-Mail-Adresse ein.',
+    name: 'Bitte gib deinen Namen ein (mind. 2 Zeichen).',
+    email: 'Bitte gib eine gültige E-Mail-Adresse ein.',
     message: 'Deine Nachricht muss mind. 10 Zeichen lang sein.',
   },
   en: {
-    name:    'Please enter your name (at least 2 characters).',
-    email:   'Please enter a valid email address.',
+    name: 'Please enter your name (at least 2 characters).',
+    email: 'Please enter a valid email address.',
     message: 'Your message must be at least 10 characters long.',
   }
 };
@@ -366,11 +408,11 @@ footerLegal.addEventListener('click', e => {
   mainSections.forEach(s => s.classList.add('d-none'));
   legalNotice.classList.add('active');
   setLang(currentLang());
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  springScroll(0);
 });
 
 legalBack.addEventListener('click', () => {
   legalNotice.classList.remove('active');
   mainSections.forEach(s => s.classList.remove('d-none'));
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  springScroll(0);
 });

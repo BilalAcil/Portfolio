@@ -47,7 +47,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scrollbar-width: none;
 }
 
@@ -1210,7 +1210,7 @@ h3 {
 
 .contact h3 {
   font-family: 'JosefinSans', sans-serif;
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: 54px;
   font-weight: 400;
   color: var(--blue);
   text-align: center;
