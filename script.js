@@ -265,3 +265,91 @@ privacyOverlay.addEventListener('click', e => {
     document.body.style.overflow = '';
   }
 });
+
+// ===== FORM VALIDATION =====
+const form = document.getElementById('contact-form');
+const sendBtn = form.querySelector('.btn-send');
+const privacyCheckbox = document.getElementById('privacy');
+
+const validators = {
+  name:    v => v.trim().length >= 2,
+  email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+  message: v => v.trim().length >= 10,
+};
+
+const errorTexts = {
+  de: {
+    name:    'Bitte gib deinen Namen ein (mind. 2 Zeichen).',
+    email:   'Bitte gib eine gültige E-Mail-Adresse ein.',
+    message: 'Deine Nachricht muss mind. 10 Zeichen lang sein.',
+  },
+  en: {
+    name:    'Please enter your name (at least 2 characters).',
+    email:   'Please enter a valid email address.',
+    message: 'Your message must be at least 10 characters long.',
+  }
+};
+
+function currentLang() {
+  return document.documentElement.getAttribute('data-lang') || 'en';
+}
+
+function showError(field, msg) {
+  const group = field.closest('.form-group');
+  let err = group.querySelector('.field-error');
+  if (!err) {
+    err = document.createElement('span');
+    err.className = 'field-error';
+    group.appendChild(err);
+  }
+  err.textContent = msg;
+  field.classList.add('input-error');
+}
+
+function clearError(field) {
+  const group = field.closest('.form-group');
+  const err = group.querySelector('.field-error');
+  if (err) err.textContent = '';
+  field.classList.remove('input-error');
+}
+
+function validateField(field) {
+  const name = field.name;
+  if (!validators[name]) return true;
+  const valid = validators[name](field.value);
+  valid ? clearError(field) : showError(field, errorTexts[currentLang()][name]);
+  return valid;
+}
+
+function isFormValid() {
+  return validators.name(form.name.value)
+    && validators.email(form.email.value)
+    && validators.message(form.message.value)
+    && privacyCheckbox.checked;
+}
+
+function updateSendBtn() {
+  const active = isFormValid();
+  sendBtn.disabled = !active;
+  sendBtn.classList.toggle('btn-disabled', !active);
+}
+
+updateSendBtn();
+
+['name', 'email', 'message'].forEach(name => {
+  form[name].addEventListener('blur', () => {
+    validateField(form[name]);
+    updateSendBtn();
+  });
+});
+
+privacyCheckbox.addEventListener('change', updateSendBtn);
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const lang = currentLang();
+  const successMsg = lang === 'de'
+    ? 'Danke! Deine Nachricht wurde erfolgreich gesendet.'
+    : 'Thank you! Your message has been sent successfully.';
+  form.innerHTML = `<div class="form-success">${successMsg}</div>`;
+});
