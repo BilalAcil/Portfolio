@@ -239,7 +239,7 @@
               <img src="./assets/icons/mail-1.png" alt="" class="mail-default">
               <img src="./assets/icons/mail-2.png" alt="" class="mail-hover">
             </div>
-            <span>bilal-acil@web.de</span>
+            <span>kontakt@bilal-acil.de</span>
           </div>
           <div class="contact-info-item" style="cursor: default;">
             <div class="contact-info-icon contact-phone-icon"></div>
@@ -267,7 +267,7 @@
             <input type="checkbox" id="privacy" required>
             <label for="privacy">
               <span data-de="Ich habe die " data-en="I've read the "></span><a href="#" class="privacy-link"
-                data-de="Datenschutzerklärung" data-en="privacy policy"></a><span
+                id="privacy-trigger" data-de="Datenschutzerklärung" data-en="privacy policy"></a><span
                 data-de=" gelesen und stimme der Verarbeitung meiner Daten zu."
                 data-en=" and agree to the processing of my data as outlined."></span>
             </label>
@@ -280,6 +280,65 @@
       <span>↑</span>
     </button>
   </section>
+
+  <!-- ===== PRIVACY OVERLAY ===== -->
+  <div class="privacy-overlay" id="privacy-overlay">
+    <div class="privacy-content">
+      <button class="privacy-close" id="privacy-close">✕</button>
+
+      <h2>Datenschutzerklärung / Privacy Policy</h2>
+
+      <div class="privacy-section">
+        <h3>DE – Datenschutzerklärung</h3>
+
+        <h4>1. Verantwortlicher</h4>
+        <p>Bilal Acil<br>Ingolstadt, Deutschland<br>E-Mail: kontakt@bilal-acil.de</p>
+
+        <h4>2. Welche Daten werden erhoben?</h4>
+        <p>Über das Kontaktformular werden Name, E-Mail-Adresse und die Nachricht verarbeitet, die du freiwillig
+          angibst. Diese Daten werden ausschließlich zur Beantwortung deiner Anfrage verwendet und nicht an Dritte
+          weitergegeben.</p>
+
+        <h4>3. Lokale Speicherung (localStorage)</h4>
+        <p>Diese Website speichert deine Spracheinstellung (DE/EN) im localStorage deines Browsers. Es werden keine
+          Cookies gesetzt und keine Tracking- oder Analyse-Tools eingesetzt.</p>
+
+        <h4>4. Externe Dienste</h4>
+        <p>Es werden Google Fonts und Font Awesome über CDN geladen. Dabei kann deine IP-Adresse an deren Server
+          übertragen werden. Weitere Informationen findest du in den Datenschutzerklärungen von Google und Fonticons,
+          Inc.</p>
+
+        <h4>5. Deine Rechte (DSGVO)</h4>
+        <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten sowie
+          das Recht auf Datenübertragbarkeit. Wende dich dazu jederzeit an: kontakt@bilal-acil.de</p>
+      </div>
+
+      <hr class="privacy-divider">
+
+      <div class="privacy-section">
+        <h3>EN – Privacy Policy</h3>
+
+        <h4>1. Controller</h4>
+        <p>Bilal Acil<br>Ingolstadt, Germany<br>Email: kontakt@bilal-acil.de</p>
+
+        <h4>2. What data is collected?</h4>
+        <p>The contact form processes the name, email address and message you voluntarily provide. This data is used
+          solely to respond to your enquiry and is not shared with third parties.</p>
+
+        <h4>3. Local storage</h4>
+        <p>This website stores your language preference (DE/EN) in your browser's localStorage. No cookies are set and
+          no tracking or analytics tools are used.</p>
+
+        <h4>4. External services</h4>
+        <p>Google Fonts and Font Awesome are loaded via CDN. Your IP address may be transmitted to their servers. For
+          more information, see the privacy policies of Google and Fonticons, Inc.</p>
+
+        <h4>5. Your rights (GDPR)</h4>
+        <p>You have the right to access, rectify, erase and restrict the processing of your data, as well as the right
+          to data portability. Contact us at any time: kontakt@bilal-acil.de</p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

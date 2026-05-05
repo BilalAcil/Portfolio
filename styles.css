@@ -1389,6 +1389,98 @@ h3 {
 
 .privacy-link {
   color: var(--blue);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ===== PRIVACY OVERLAY ===== */
+.privacy-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(38, 46, 52, 0.92);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.privacy-overlay.open {
+  display: flex;
+}
+
+.privacy-content {
+  background-color: #262e34;
+  border: 1px solid rgba(137, 188, 217, 0.25);
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 760px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  font-family: 'JosefinSans', sans-serif;
+  scrollbar-width: none;
+}
+
+.privacy-content::-webkit-scrollbar {
+  display: none;
+}
+
+.privacy-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: var(--blue);
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.privacy-close:hover {
+  color: var(--white);
+}
+
+.privacy-content h2 {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 32px;
+  line-height: 120%;
+  color: var(--blue);
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.privacy-section h3 {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.privacy-section h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  margin: 20px 0 6px;
+}
+
+.privacy-section p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.privacy-divider {
+  border: none;
+  border-top: 1px solid rgba(137, 188, 217, 0.2);
+  margin: 32px 0;
 }
 
 .btn-send {

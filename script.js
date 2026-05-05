@@ -242,3 +242,26 @@ renderProjects();
 // Restore saved language — must run after renderProjects()
 const savedLang = localStorage.getItem('lang') || 'en';
 setLang(savedLang);
+
+// ===== PRIVACY OVERLAY =====
+const privacyOverlay = document.getElementById('privacy-overlay');
+const privacyTrigger = document.getElementById('privacy-trigger');
+const privacyClose = document.getElementById('privacy-close');
+
+privacyTrigger.addEventListener('click', e => {
+  e.preventDefault();
+  privacyOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+
+privacyClose.addEventListener('click', () => {
+  privacyOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+});
+
+privacyOverlay.addEventListener('click', e => {
+  if (e.target === privacyOverlay) {
+    privacyOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
