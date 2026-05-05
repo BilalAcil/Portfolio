@@ -353,3 +353,24 @@ form.addEventListener('submit', e => {
     : 'Thank you! Your message has been sent successfully.';
   form.innerHTML = `<div class="form-success">${successMsg}</div>`;
 });
+
+// ===== LEGAL NOTICE =====
+const legalNotice = document.getElementById('legal-notice');
+const legalBack = document.getElementById('legal-back');
+const footerLegal = document.querySelector('.footer-legal');
+const mainSections = ['why-me', 'my-skills', 'my-projects', 'references', 'contact']
+  .map(cls => document.querySelector('.' + cls));
+
+footerLegal.addEventListener('click', e => {
+  e.preventDefault();
+  mainSections.forEach(s => s.classList.add('d-none'));
+  legalNotice.classList.add('active');
+  setLang(currentLang());
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+legalBack.addEventListener('click', () => {
+  legalNotice.classList.remove('active');
+  mainSections.forEach(s => s.classList.remove('d-none'));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
