@@ -78,7 +78,8 @@ body {
 .hero-content {
   width: 100%;
   max-width: 1440px;
-  height: 705px;
+  height: calc(100vh - 104px);
+  max-height: 705px;
   margin-top: 40px;
   padding: 0 109px;
   display: flex;
