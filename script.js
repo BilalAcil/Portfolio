@@ -285,6 +285,14 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   });
 });
 
+// Talk button scroll to contact
+const talkButton = document.querySelector('.talk-button-container');
+if (talkButton) {
+  talkButton.addEventListener('click', () => {
+    springScroll(scrollAnchors['#contact']);
+  });
+}
+
 // ===== PRIVACY OVERLAY =====
 const privacyOverlay = document.getElementById('privacy-overlay');
 const privacyTrigger = document.getElementById('privacy-trigger');
