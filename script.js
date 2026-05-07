@@ -416,3 +416,20 @@ legalBack.addEventListener('click', () => {
   mainSections.forEach(s => s.classList.remove('d-none'));
   springScroll(0);
 });
+
+// ===== FOOTER ICON HOVER IMAGES =====
+const footerIconImages = document.querySelectorAll('.footer-right img[data-hover]');
+footerIconImages.forEach(img => {
+  const originalSrc = img.src;
+  const hoverSrc = img.dataset.hover;
+  const preload = new Image();
+  preload.src = hoverSrc;
+
+  const parentLink = img.closest('.footer-icon');
+  if (!parentLink) return;
+
+  parentLink.addEventListener('mouseenter', () => { img.src = hoverSrc; });
+  parentLink.addEventListener('mouseleave', () => { img.src = originalSrc; });
+  parentLink.addEventListener('focus', () => { img.src = hoverSrc; });
+  parentLink.addEventListener('blur', () => { img.src = originalSrc; });
+});

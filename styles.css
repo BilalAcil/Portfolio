@@ -1680,49 +1680,27 @@ footer {
 }
 
 .footer-icon {
-  width: 34px;
-  height: 34px;
-  border: 1.5px solid var(--nav-text);
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  transition: border-color 0.2s ease, opacity 0.2s ease;
 }
 
-.footer-icon:hover {
-  opacity: 0.6;
+.footer-icon img {
+  width: 30px;
+  height: auto;
+  transition: none;
 }
 
 .footer-github,
 .footer-mail,
 .footer-linkedin {
-  width: 16px;
-  height: 16px;
-  background-color: var(--nav-text);
-  mask-size: contain;
-  -webkit-mask-size: contain;
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-position: center;
+  width: 30px;
+  height: 30px;
 }
 
-.footer-github {
-  mask-image: url('./assets/icons/Github button.png');
-  -webkit-mask-image: url('./assets/icons/Github button.png');
-}
-
-.footer-mail {
-  mask-image: url('./assets/icons/Vector 32.png');
-  -webkit-mask-image: url('./assets/icons/Vector 32.png');
-}
-
-.footer-linkedin {
-  mask-image: url('./assets/icons/Linkedin button.png');
-  -webkit-mask-image: url('./assets/icons/Linkedin button.png');
-}
 
 /* ===== LEGAL NOTICE ===== */
 .legal-notice {
