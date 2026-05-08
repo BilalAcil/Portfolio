@@ -109,7 +109,8 @@ body {
   object-fit: contain;
   object-position: bottom;
   display: block;
-  animation: bgImageExpand 1s ease-out forwards;
+  animation: bgImageExpand 0.5s ease-out forwards;
+  animation-delay: 1s;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
 }
 
@@ -173,6 +174,75 @@ body {
   align-items: center;
 }
 
+/* ========================= */
+/* NAME LETTER ANIMATION */
+/* ========================= */
+
+.hero-name span {
+  display: inline-block;
+
+  animation: letterJump 0.5s ease forwards;
+
+  /* STARTET WENN KREIS KOMMT */
+  animation-delay: 0.2s;
+}
+
+/* kleine Staffelung */
+
+.hero-name span:nth-child(9) {
+  animation-delay: 0.20s;
+}
+
+.hero-name span:nth-child(8) {
+  animation-delay: 0.25s;
+}
+
+.hero-name span:nth-child(7) {
+  animation-delay: 0.30s;
+}
+
+.hero-name span:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+.hero-name span:nth-child(5) {
+  animation-delay: 0.40s;
+}
+
+.hero-name span:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.hero-name span:nth-child(3) {
+  animation-delay: 0.50s;
+}
+
+.hero-name span:nth-child(2) {
+  animation-delay: 0.55s;
+}
+
+.hero-name span:nth-child(1) {
+  animation-delay: 0.60s;
+}
+
+/* Animation */
+
+@keyframes letterJump {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-18px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
 /* Logo in hero */
 .hero-logo {
   height: 100%;
@@ -230,10 +300,10 @@ body {
 /* Name */
 .hero-name {
   font-family: 'Anta', sans-serif;
-  font-size: clamp(48px, 6.1vw, 88px);
+  display: flex;
+  font-size: 77px;
   font-weight: 400;
   color: var(--white);
-  letter-spacing: 2px;
   cursor: default;
 }
 
@@ -244,6 +314,54 @@ body {
   font-weight: 400;
   color: var(--white);
   cursor: default;
+}
+
+/* ========================= */
+/* TEXT WRAPPER */
+/* ========================= */
+
+.hero-text-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========================= */
+/* FLYING CIRCLE */
+/* ========================= */
+
+.flying-circle {
+  position: absolute;
+
+  top: 56%;
+  right: -120px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+  background: var(--blue);
+
+  animation: flyCircle 1s linear forwards;
+
+  /* z-index: 10; */
+}
+
+/* ========================= */
+/* ANIMATION */
+/* ========================= */
+
+@keyframes flyCircle {
+
+  from {
+    right: -120px;
+  }
+
+  to {
+    right: 170%;
+  }
+
 }
 
 /* Scroll indicator */
