@@ -20,6 +20,11 @@ function springScroll(targetY, duration = 900) {
   requestAnimationFrame(step);
 }
 
+// ===== EMAILJS =====
+if (window.emailjs) {
+  emailjs.init('5tl1HsbrJ1MBW_ume');
+}
+
 // ===== LANGUAGE SWITCHER =====
 const btnDe = document.getElementById('lang-de');
 const btnEn = document.getElementById('lang-en');
@@ -397,11 +402,49 @@ privacyCheckbox.addEventListener('change', updateSendBtn);
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  const lang = currentLang();
-  const successMsg = lang === 'de'
-    ? 'Danke! Deine Nachricht wurde erfolgreich gesendet.'
-    : 'Thank you! Your message has been sent successfully.';
-  form.innerHTML = `<div class="form-success">${successMsg}</div>`;
+  if (!isFormValid()) {
+    updateSendBtn();
+    return;
+  }
+
+  if (!window.emailjs) {
+    const errMsg = currentLang() === 'de'
+      ? 'E-Mail-Service nicht verfügbar. Bitte versuche es später erneut.'
+      : 'Email service is not available. Please try again later.';
+    alert(errMsg);
+    return;
+  }
+
+  sendBtn.disabled = true;
+  const originalText = sendBtn.textContent;
+  sendBtn.textContent = currentLang() === 'de' ? 'Sende...' : 'Sending...';
+
+  const templateParams = {
+    Name: form.name.value,
+    Email: form.email.value,
+    Nachricht: form.message.value,
+    to_email: 'kontakt@bilal-acil.de'
+  };
+
+  emailjs.send('service_ijq716l', 'template_fi4djrc', templateParams, '5tl1HsbrJ1MBW_ume')
+    .then(() => {
+      const lang = currentLang();
+      const successMsg = lang === 'de'
+        ? 'Danke! Deine Nachricht wurde erfolgreich gesendet.'
+        : 'Thank you! Your message has been sent successfully.';
+      form.innerHTML = `<div class="form-success">${successMsg}</div>`;
+    })
+    .catch(error => {
+      console.error('EmailJS send error:', error);
+      const lang = currentLang();
+      const errorDetails = error && (error.text || error.statusText || error.message || JSON.stringify(error));
+      const failMsg = lang === 'de'
+        ? `Beim Senden ist ein Fehler aufgetreten. Bitte versuche es noch einmal.\n${errorDetails}`
+        : `An error occurred while sending. Please try again.\n${errorDetails}`;
+      alert(failMsg);
+      sendBtn.disabled = false;
+      sendBtn.textContent = originalText;
+    });
 });
 
 // ===== LEGAL NOTICE =====
