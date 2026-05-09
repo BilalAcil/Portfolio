@@ -109,8 +109,8 @@ body {
   object-fit: contain;
   object-position: bottom;
   display: block;
-  animation: bgImageExpand 0.5s ease-out forwards;
-  animation-delay: 1s;
+  animation: bgImageExpand 1s ease-out forwards;
+  animation-delay: 1.8s;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
 }
 
@@ -180,49 +180,49 @@ body {
 
 .hero-name span {
   display: inline-block;
-
-  animation: letterJump 0.5s ease forwards;
-
-  /* STARTET WENN KREIS KOMMT */
-  animation-delay: 0.2s;
+  animation: letterJump 0.5s ease, letterJump 0.5s ease;
 }
 
-/* kleine Staffelung */
+/* Hinflug L→R, Rückflug R→L */
 
-.hero-name span:nth-child(9) {
-  animation-delay: 0.20s;
-}
-
-.hero-name span:nth-child(8) {
-  animation-delay: 0.25s;
-}
-
-.hero-name span:nth-child(7) {
-  animation-delay: 0.30s;
-}
-
-.hero-name span:nth-child(6) {
-  animation-delay: 0.35s;
-}
-
-.hero-name span:nth-child(5) {
-  animation-delay: 0.40s;
-}
-
-.hero-name span:nth-child(4) {
-  animation-delay: 0.45s;
-}
-
-.hero-name span:nth-child(3) {
-  animation-delay: 0.50s;
+.hero-name span:nth-child(1) {
+  animation-delay: 1.50s, 3.97s;
 }
 
 .hero-name span:nth-child(2) {
-  animation-delay: 0.55s;
+  animation-delay: 1.64s, 3.84s;
 }
 
-.hero-name span:nth-child(1) {
-  animation-delay: 0.60s;
+.hero-name span:nth-child(3) {
+  animation-delay: 1.78s, 3.71s;
+}
+
+.hero-name span:nth-child(4) {
+  animation-delay: 1.92s, 3.58s;
+}
+
+.hero-name span:nth-child(5) {
+  animation-delay: 2.06s, 3.45s;
+}
+
+.hero-name span:nth-child(6) {
+  animation-delay: 2.20s, 3.32s;
+}
+
+.hero-name span:nth-child(7) {
+  animation-delay: 2.34s, 3.19s;
+}
+
+.hero-name span:nth-child(8) {
+  animation-delay: 2.48s, 3.06s;
+}
+
+.hero-name span:nth-child(9) {
+  animation-delay: 2.62s, 2.93s;
+}
+
+.hero-name span:nth-child(10) {
+  animation-delay: 2.76s, 2.80s;
 }
 
 /* Animation */
@@ -301,6 +301,7 @@ body {
 .hero-name {
   font-family: 'Anta', sans-serif;
   display: flex;
+  justify-content: space-between;
   font-size: 77px;
   font-weight: 400;
   color: var(--white);
@@ -334,18 +335,17 @@ body {
 .flying-circle {
   position: absolute;
 
-  top: 56%;
+  top: 55%;
   right: -120px;
 
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 
   border-radius: 50%;
   background: var(--blue);
 
-  animation: flyCircle 1s linear forwards;
+  animation: flyCircle 2.5s ease 2.8s both;
 
-  /* z-index: 10; */
 }
 
 /* ========================= */
@@ -354,14 +354,130 @@ body {
 
 @keyframes flyCircle {
 
-  from {
+  0% {
+    right: 110%;
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  52% {
     right: -120px;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    right: 150%;
+  }
+
+}
+
+/* ========================= */
+/* FALLING ICONS */
+/* ========================= */
+
+.falling-icons {
+  position: absolute;
+  right: 110%;
+  top: 55%;
+  width: 22px;
+  height: 22px;
+  animation: fallDown 1.5s ease-in 1.3s both;
+}
+
+.falling-icons img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  opacity: 0;
+}
+
+.falling-icons img:nth-child(1) {
+  animation: showIcon1 1.5s linear 1.3s both;
+}
+
+.falling-icons img:nth-child(2) {
+  animation: showIcon2 1.5s linear 1.3s both;
+}
+
+.falling-icons img:nth-child(3) {
+  animation: showIcon3 1.5s linear 1.3s both;
+}
+
+@keyframes fallDown {
+  from {
+    transform: translateY(-300px);
   }
 
   to {
-    right: 170%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes showIcon1 {
+  0% {
+    opacity: 1;
   }
 
+  33% {
+    opacity: 1;
+  }
+
+  34% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showIcon2 {
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  34% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 1;
+  }
+
+  67% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showIcon3 {
+  0% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  67% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Scroll indicator */

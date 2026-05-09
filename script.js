@@ -1,3 +1,14 @@
+// ===== HERO NAME WIDTH SYNC =====
+function syncHeroNameWidth() {
+  const name = document.querySelector('.hero-name');
+  const title = document.querySelector('.hero-title');
+  if (!name || !title) return;
+  name.style.width = title.offsetWidth + 'px';
+}
+
+document.fonts.ready.then(syncHeroNameWidth);
+window.addEventListener('resize', syncHeroNameWidth);
+
 // ===== SPRING SCROLL =====
 function springScroll(targetY, duration = 900) {
   const startY = window.scrollY;
