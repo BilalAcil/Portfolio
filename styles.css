@@ -344,7 +344,7 @@ body {
   border-radius: 50%;
   background: var(--blue);
 
-  animation: flyCircle 2.5s ease 2.8s both;
+  animation: flyCircle 2.5s ease 2.6s both;
 
 }
 
@@ -356,6 +356,12 @@ body {
 
   0% {
     right: 110%;
+    opacity: 0;
+  }
+
+  1% {
+    right: 110%;
+    opacity: 1;
     animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
   }
 
