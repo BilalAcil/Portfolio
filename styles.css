@@ -776,7 +776,8 @@ body {
   cursor: pointer;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--white);
 }
 
