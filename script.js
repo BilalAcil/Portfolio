@@ -283,11 +283,10 @@ setLang(savedLang);
 
 // ===== SCROLL ANCHORS =====
 const scrollAnchors = {
-  '#why-me': 650,
-  '#legal': 650,
-  '#skills': 1200,
-  '#projects': 1900,
-  '#contact': 3500,
+  '#why-me': 950,
+  '#skills': 1400,
+  '#projects': 2100,
+  '#contact': 3700,
 };
 
 document.querySelector('.scroll-indicator img').addEventListener('click', () => {
