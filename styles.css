@@ -132,12 +132,29 @@ body {
 }
 
 @keyframes bgAbsorb {
-  0%   { transform: scaleX(1)    scaleY(1); }
-  12%  { transform: scaleX(0.91) scaleY(1.05); }
-  30%  { transform: scaleX(1.07) scaleY(0.96); }
-  50%  { transform: scaleX(0.97) scaleY(1.02); }
-  70%  { transform: scaleX(1.02) scaleY(0.99); }
-  100% { transform: scaleX(1)    scaleY(1); }
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+
+  12% {
+    transform: scaleX(0.91) scaleY(1.05);
+  }
+
+  30% {
+    transform: scaleX(1.07) scaleY(0.96);
+  }
+
+  50% {
+    transform: scaleX(0.97) scaleY(1.02);
+  }
+
+  70% {
+    transform: scaleX(1.02) scaleY(0.99);
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
 }
 
 .photo-oval {
@@ -2018,10 +2035,7 @@ footer {
   margin-bottom: 32px;
   transition: opacity 0.2s ease;
   letter-spacing: 0.5px;
-}
-
-.legal-back:hover {
-  opacity: 0.7;
+  opacity: 0;
 }
 
 .legal-heading {

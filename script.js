@@ -284,6 +284,7 @@ setLang(savedLang);
 // ===== SCROLL ANCHORS =====
 const scrollAnchors = {
   '#why-me': 650,
+  '#legal': 650,
   '#skills': 1200,
   '#projects': 1900,
   '#contact': 3500,
@@ -470,7 +471,7 @@ footerLegal.addEventListener('click', e => {
   mainSections.forEach(s => s.classList.add('d-none'));
   legalNotice.classList.add('active');
   setLang(currentLang());
-  springScroll(0);
+  requestAnimationFrame(() => springScroll(legalNotice.offsetTop));
 });
 
 legalBack.addEventListener('click', () => {
