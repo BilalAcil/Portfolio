@@ -581,11 +581,11 @@ body {
 .social-icons a {
   width: 30px;
   height: 30px;
+  cursor: default;
 }
 
 .social-icons a:hover {
   background-color: var(--blue);
-  cursor: pointer;
 }
 
 .rectangle-185 {
@@ -749,7 +749,7 @@ body {
   font-weight: 400;
   color: var(--bg);
   letter-spacing: 1px;
-  cursor: default;
+  cursor: pointer;
   opacity: 0.8;
 }
 
@@ -881,6 +881,7 @@ h3 {
   font-weight: 400;
   font-size: 60px;
   color: var(--blue);
+  cursor: default;
 }
 
 .why-me-info {
@@ -1040,6 +1041,7 @@ h3 {
 .skills-motivation {
   font-family: 'JosefinSans', sans-serif;
   font-size: 18px;
+  cursor: default;
   line-height: 1.7;
   color: var(--white);
   opacity: 0.8;
@@ -1064,6 +1066,7 @@ h3 {
 
 .skills-label {
   font-family: 'JosefinSans', sans-serif;
+  cursor: default;
   font-size: 13px;
   letter-spacing: 3px;
   color: var(--blue);
@@ -1227,14 +1230,17 @@ h3 {
   align-items: baseline;
   gap: 16px;
   flex-wrap: wrap;
+  cursor: default;
 }
 
 .project-duration {
   font-family: 'JosefinSans', sans-serif;
-  font-size: 13px;
-  color: var(--muted);
+  font-size: 18px;
+  line-height: 120%;
+  color: var(--white);
   font-weight: 400;
   letter-spacing: 0.5px;
+  cursor: default;
 }
 
 .h4-bottom {
@@ -1250,6 +1256,7 @@ h3 {
   font-size: 18px;
   color: var(--white);
   line-height: 1.2;
+  cursor: default;
 }
 
 .panel-right {
@@ -1272,6 +1279,7 @@ h3 {
   display: block;
   margin-bottom: 10px;
   letter-spacing: 1px;
+  cursor: default;
 }
 
 .tech-icons {
@@ -1332,6 +1340,7 @@ h3 {
   text-decoration: none;
   letter-spacing: 1px;
   transition: background 0.3s ease;
+  cursor: default;
 }
 
 .btn-live:hover {
@@ -1348,6 +1357,7 @@ h3 {
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+  cursor: default;
 }
 
 .btn-gh:hover {
@@ -1455,6 +1465,7 @@ h3 {
   font-size: 26px;
   font-weight: 600;
   color: var(--white);
+  cursor: default;
 }
 
 .ref-project {
@@ -1462,6 +1473,7 @@ h3 {
   font-size: 18px;
   color: var(--white);
   font-weight: 400;
+  cursor: default;
 }
 
 .project-name {
@@ -1479,6 +1491,7 @@ h3 {
   color: var(--white);
   line-height: 120%;
   font-weight: 400;
+  cursor: default;
 }
 
 .ref-linkedin {
@@ -1525,6 +1538,7 @@ h3 {
   font-size: 18px;
   color: var(--white);
   line-height: 120%;
+  cursor: default;
 }
 
 .contact-info {
@@ -1639,6 +1653,7 @@ h3 {
   font-size: 14px;
   color: var(--blue);
   letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 .form-group input,
@@ -1654,6 +1669,7 @@ h3 {
   outline: none;
   transition: border-color 0.3s ease;
   resize: none;
+  cursor: pointer;
 }
 
 .form-group textarea {
@@ -1703,7 +1719,7 @@ h3 {
   font-family: 'JosefinSans', sans-serif;
   font-size: 14px;
   color: var(--white);
-  cursor: pointer;
+  cursor: default;
 }
 
 .privacy-link {
@@ -1938,6 +1954,7 @@ footer {
   font-size: 18px;
   color: var(--bg);
   opacity: 0.8;
+  cursor: default;
 }
 
 .footer-center {
@@ -1958,6 +1975,7 @@ footer {
   color: var(--nav-text);
   letter-spacing: 1px;
   opacity: 0.8;
+  cursor: default;
 }
 
 .footer-role {
@@ -1966,12 +1984,17 @@ footer {
   font-weight: 300;
   color: var(--white);
   line-height: 120%;
+  cursor: default;
 }
 
 .footer-right {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.footer-right a {
+  cursor: default;
 }
 
 .footer-icon {
