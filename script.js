@@ -131,8 +131,8 @@ const projectsData = [
     ],
     techs: ['HTML.png', 'JS.png', 'CSS.png'],
     img: 'Pokedex.png',
-    live: '#',
-    github: '#'
+    live: 'https://pokedex.bilal-acil.de',
+    github: 'https://github.com/BilalAcil/pokedex'
   },
   {
     tab: '2. Join',
@@ -155,8 +155,8 @@ const projectsData = [
     ],
     techs: ['HTML.png', 'JS.png', 'CSS.png', 'Git.png', 'Firebase.png'],
     img: 'Join.png',
-    live: '#',
-    github: '#'
+    live: 'https://join.bilal-acil.de',
+    github: 'https://github.com/BilalAcil/Join'
   },
   {
     tab: '3. El Pollo Loco',
@@ -179,8 +179,8 @@ const projectsData = [
     ],
     techs: ['HTML.png', 'JS.png', 'CSS.png'],
     img: 'El-Pollo-Loco.png',
-    live: '#',
-    github: '#'
+    live: 'https://elpolloloco.bilal-acil.de',
+    github: 'https://github.com/BilalAcil/El-Pollo-Loco'
   },
   {
     tab: '4. DA Bubble',
@@ -241,8 +241,8 @@ function renderProjects() {
 
     // Buttons HTML
     const buttonsHTML = [
-      project.live ? `<a href="${project.live}" class="btn-live">Live Test</a>` : '',
-      project.github ? `<a href="${project.github}" class="btn-gh">GitHub</a>` : ''
+      project.live ? `<a href="${project.live}" class="btn-live" target="_blank" rel="noopener">Live Test</a>` : '',
+      project.github ? `<a href="${project.github}" class="btn-gh" target="_blank" rel="noopener">GitHub</a>` : ''
     ].join('');
 
     // Full panel HTML
