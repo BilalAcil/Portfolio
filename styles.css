@@ -88,10 +88,8 @@ body {
 /* Photo */
 .hero-photo {
   position: relative;
-  height: 100%;
-  width: 50%;
-  min-width: 520px;
-  max-width: 600px;
+  height: 705px;
+  width: 611px;
 }
 
 .background {
@@ -200,8 +198,7 @@ body {
   position: relative;
   height: 100%;
   display: flex;
-  width: 50%;
-  max-width: 600px;
+  width: 611px;
   flex-direction: column;
   align-items: center;
 }
@@ -220,9 +217,20 @@ body {
 }
 
 @keyframes wallHit {
-  0%   { opacity: 0; transform: scaleY(0.2); }
-  20%  { opacity: 1; transform: scaleY(1); }
-  100% { opacity: 0; transform: scaleY(1); }
+  0% {
+    opacity: 0;
+    transform: scaleY(0.2);
+  }
+
+  20% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
 }
 
 /* ========================= */
@@ -362,7 +370,7 @@ body {
 /* Title */
 .hero-title {
   font-family: 'JosefinSans', sans-serif;
-  font-size: clamp(22px, 2.8vw, 40px);
+  font-size: 40px;
   font-weight: 400;
   color: var(--white);
   cursor: default;
@@ -384,10 +392,11 @@ body {
 /* ========================= */
 
 .flying-circle {
-  position: absolute;
+  --circle-end: -70px;
 
+  position: absolute;
   top: 55%;
-  right: -120px;
+  right: var(--circle-end);
 
   width: 20px;
   height: 20px;
@@ -396,7 +405,6 @@ body {
   background: var(--blue);
 
   animation: flyCircle 2.4s ease 2.7s both;
-
 }
 
 /* ========================= */
@@ -417,7 +425,7 @@ body {
   }
 
   52% {
-    right: -70px;
+    right: var(--circle-end);
     animation-timing-function: linear;
   }
 
@@ -2123,7 +2131,43 @@ footer {
 }
 
 
-/* ===== MOBILE (max-width: 768px) ===== */
+/* ===== 1300px ===== */
+@media (max-width: 1300px) {
+  .flying-circle {
+    --circle-end: -40px;
+  }
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 1300px) {
+  .hero-text {
+    width: 500px;
+  }
+
+  .falling-icons {
+    right: 108%;
+  }
+
+  .hero-name {
+    width: 414px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+}
+
+
+@media (max-width: 1150px) {
+  .hero-content {
+    padding: 0 30px;
+  }
+}
+
+
+
 @media (max-width: 768px) {
 
   /* Hero */
