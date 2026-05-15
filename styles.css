@@ -197,12 +197,32 @@ body {
 
 /* Text */
 .hero-text {
+  position: relative;
   height: 100%;
   display: flex;
   width: 50%;
   max-width: 600px;
   flex-direction: column;
   align-items: center;
+}
+
+.hero-text::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, var(--blue) 50%, transparent 100%);
+  opacity: 0;
+  pointer-events: none;
+  animation: wallHit 0.7s ease-out 3.95s both;
+}
+
+@keyframes wallHit {
+  0%   { opacity: 0; transform: scaleY(0.2); }
+  20%  { opacity: 1; transform: scaleY(1); }
+  100% { opacity: 0; transform: scaleY(1); }
 }
 
 /* ========================= */
@@ -2100,4 +2120,91 @@ footer {
   border: none;
   border-top: 1px solid rgba(137, 188, 217, 0.2);
   margin: 32px 0;
+}
+
+
+/* ===== MOBILE (max-width: 768px) ===== */
+@media (max-width: 768px) {
+
+  /* Hero */
+  .hero {
+    height: auto;
+    min-height: calc(100dvh - 104px);
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 24px;
+    height: auto;
+    max-height: none;
+    margin-top: 0;
+    gap: 28px;
+  }
+
+  /* Foto */
+  .hero-photo {
+    width: 200px;
+    height: 260px;
+    max-width: 60vw;
+    min-width: unset;
+  }
+
+  .background {
+    display: none;
+  }
+
+  /* Text-Bereich */
+  .hero-text {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    align-items: center;
+  }
+
+  .hero-logo {
+    height: auto;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  /* Social-Icons: absolute → static, horizontal */
+  .social-icons {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    top: auto;
+    right: auto;
+  }
+
+  .s-icons {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  /* Name */
+  .hero-name {
+    font-size: clamp(28px, 8.5vw, 50px);
+    gap: 2px;
+    justify-content: center;
+  }
+
+  /* Titel */
+  .hero-title {
+    text-align: center;
+    font-size: clamp(14px, 3.8vw, 20px);
+  }
+
+  .hero-text-wrapper {
+    align-items: center;
+  }
+
+  /* Desktop-Animationen ausblenden */
+  .flying-circle,
+  .falling-icons,
+  .hero-text::after {
+    display: none;
+  }
 }
