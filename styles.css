@@ -2131,17 +2131,13 @@ footer {
 }
 
 
-/* ===== 1300px ===== */
+/* ===== MOBILE ===== */
+
 @media (max-width: 1300px) {
   .flying-circle {
     --circle-end: -40px;
   }
-}
 
-
-/* ===== MOBILE ===== */
-
-@media (max-width: 1300px) {
   .hero-text {
     width: 500px;
   }
@@ -2171,7 +2167,32 @@ footer {
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1100px) {
+  .falling-icons {
+    right: 117%;
+  }
+
+  .flying-circle {
+    --circle-end: -55px;
+    animation-delay: 2.8s;
+  }
+
+  .background img {
+    animation: bgImageExpand 1.5s ease-out forwards;
+    animation-delay: 1.8s;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+  }
+
+  @keyframes bgImageExpand {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
   .hero-content {
     max-height: 500px;
   }
@@ -2179,9 +2200,39 @@ footer {
   .hero-photo {
     height: 500px;
   }
+
+  .background {
+    animation-delay: 5s;
+  }
 }
 
 
+
+@media (max-width: 1050px) {
+  .hero-name span {
+    animation: none;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+
+  .flying-circle,
+  .falling-icons,
+  .hero-text::after {
+    display: none;
+  }
+
+  .background img {
+    animation: bgImageExpand 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+  }
+
+  .background {
+    animation-delay: 1.2s;
+  }
+}
 
 @media (max-width: 1000px) {
 
@@ -2208,10 +2259,6 @@ footer {
     height: 260px;
     max-width: 60vw;
     min-width: unset;
-  }
-
-  .background {
-    display: none;
   }
 
   /* Text-Bereich */
@@ -2260,10 +2307,4 @@ footer {
     align-items: center;
   }
 
-  /* Desktop-Animationen ausblenden */
-  .flying-circle,
-  .falling-icons,
-  .hero-text::after {
-    display: none;
-  }
 }
