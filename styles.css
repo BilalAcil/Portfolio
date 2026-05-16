@@ -2163,12 +2163,27 @@ footer {
 @media (max-width: 1150px) {
   .hero-content {
     padding: 0 30px;
+    max-height: 605px;
+  }
+
+  .hero-photo {
+    height: 605px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .hero-content {
+    max-height: 500px;
+  }
+
+  .hero-photo {
+    height: 500px;
   }
 }
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
   /* Hero */
   .hero {
