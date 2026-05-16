@@ -2162,6 +2162,10 @@ footer {
   .references {
     padding: 150px 50px 5px;
   }
+
+  .arrow-up-container {
+    padding: 0 250px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -2256,9 +2260,12 @@ footer {
     height: 320px;
   }
 
-
   .ref-name {
     font-size: 22px;
+  }
+
+  .arrow-up-container {
+    padding: 0px 300px;
   }
 }
 
