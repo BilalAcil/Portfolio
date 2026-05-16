@@ -2155,6 +2155,34 @@ footer {
   }
 }
 
+@media (max-width: 1200px) {
+  .project-panel.active {
+    gap: 50px;
+  }
+
+  .panel-screenshot {
+    width: 450px;
+    min-height: 270px;
+  }
+
+  .project-block h4 {
+    flex: 1;
+  }
+
+  .project-duration {
+    font-size: 16px;
+  }
+
+  .project-block h4 {
+    font-size: 24px;
+  }
+
+  .project-block p {
+    font-size: 16px;
+  }
+
+}
+
 
 @media (max-width: 1150px) {
   .hero-content {
@@ -2168,6 +2196,15 @@ footer {
 }
 
 @media (max-width: 1100px) {
+
+  .project-panels {
+    height: 600px;
+  }
+
+  .panel-right {
+    gap: 50px;
+  }
+
   .falling-icons {
     right: 117%;
   }
