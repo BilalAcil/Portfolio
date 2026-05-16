@@ -2153,6 +2153,15 @@ footer {
   .hero-title {
     font-size: 34px;
   }
+
+  .reference-card {
+    width: 350px;
+    height: 350px;
+  }
+
+  .references {
+    padding: 150px 50px 5px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -2240,6 +2249,16 @@ footer {
 
   .background {
     animation-delay: 5s;
+  }
+
+  .reference-card {
+    width: 320px;
+    height: 320px;
+  }
+
+
+  .ref-name {
+    font-size: 22px;
   }
 }
 
