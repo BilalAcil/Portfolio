@@ -283,15 +283,12 @@ setLang(savedLang);
 
 // ===== SCROLL ANCHORS =====
 const scrollAnchors = {
-  '#why-me': 950,
-  '#skills': 1400,
-  '#projects': 2100,
-  '#contact': 3700,
+  '#why-me': 900,
+  '#skills': 1350,
+  '#projects': 2050,
+  '#contact': 3650,
 };
 
-document.querySelector('.scroll-indicator img').addEventListener('click', () => {
-  springScroll(scrollAnchors['#why-me']);
-});
 
 document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
