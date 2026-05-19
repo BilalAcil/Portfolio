@@ -103,7 +103,7 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="nav-logo" onclick="springScroll(0)">
+      <div class="nav-logo" id="nav-logo">
         <span class="nav-logo-icon"><img src="./assets/images/Bilal_Logo_3.png" alt=""></span>
         <span class="nav-logo-text">B.Acil</span>
       </div>
@@ -320,45 +320,70 @@
       <h2 class="legal-heading" data-de="Impressum" data-en="Legal Notice"></h2>
 
       <div class="legal-section">
-        <h3>DE – Impressum</h3>
+        <div class="poin-container">
+          <h5 class="imprint" data-de="Angaben gemäß § 5 TMG" data-en="Imprint"></h5><br>
+          <p>• Bilal Acil<br>• 85057 Ingolstadt<br>
+          <p data-de="• Deutschland" data-en="• Germany"></p>
+          </p><br>
 
-        <h4>Angaben gemäß § 5 TMG</h4>
-        <p>Bilal Acil<br>Ingolstadt, Deutschland<br>E-Mail: kontakt@bilal-acil.de</p>
+          <h5 class="imprint-points" data-de="Kontakt" data-en="Contact"></h5>
+          <p>Email: <a href="mailto:kontakt@bilal-acil.de">kontakt@bilal-acil.de</a></p>
+        </div>
 
-        <h4>Haftungsausschluss</h4>
-        <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
-          und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
+        <div class="poin-container">
+          <h5 class="imprint-points" data-de="Nutzungsbedingungen" data-en="Acceptance of terms"></h5>
+          <p data-de="Durch den Zugriff auf und die Nutzung von <span class=&quot;legal-highlight&quot;>Portfolio</span> (Produkt) erkennst du die folgenden Nutzungsbedingungen sowie alle Richtlinien, Leitlinien oder Änderungen daran an, die dir von Zeit zu Zeit vorgelegt werden können. Wir, die aufgeführten Studierenden, können die Nutzungsbedingungen jederzeit ohne vorherige Ankündigung aktualisieren oder ändern."
+            data-en="By accessing and using <span class=&quot;legal-highlight&quot;>Portfolio</span> (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.">
+          </p>
+        </div>
 
-        <h4>Urheberrecht</h4>
-        <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
-          Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen
-          des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+        <div class="poin-container">
+          <h5 class="imprint-points" data-de="Umfang und Eigentum am Produkt"
+            data-en="Scope and ownership of the product"></h5>
+          <p data-de="<span class=&quot;legal-highlight&quot;>Portfolio</span> wurde im Rahmen eines Studentengruppenprojekts in einem Webentwicklungs-Bootcamp bei der <span class=&quot;legal-highlight&quot;>Developer Akademie GmbH</span> entwickelt. Es hat einen Bildungszweck und ist nicht für den umfangreichen persönlichen oder geschäftlichen Einsatz vorgesehen. Daher können wir keine konsistente Verfügbarkeit, Zuverlässigkeit, Genauigkeit oder andere Qualitätsaspekte dieses Produkts garantieren."
+            data-en="<span class=&quot;legal-highlight&quot;>Portfolio</span> has been developed as part of a student group project in a web development bootcamp at the <span class=&quot;legal-highlight&quot;>Developer Akademie GmbH</span>. It has an educational purpose and is not intended for extensive personal &amp; business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product.">
+          </p><br>
+          <p data-de="Das Design von <span class=&quot;legal-highlight&quot;>Portfolio</span> ist Eigentum der <span class=&quot;legal-highlight&quot;>Developer Akademie GmbH</span>. Unbefugte Nutzung, Vervielfältigung, Änderung, Verbreitung oder Nachahmung des Designs ist ausdrücklich untersagt."
+            data-en="The design of <span class=&quot;legal-highlight&quot;>Portfolio</span> is owned by the <span class=&quot;legal-highlight&quot;>Developer Akademie GmbH</span>. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.">
+          </p>
+        </div>
 
-        <h4>Externe Links</h4>
-        <p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte kein Einfluss besteht. Für die
-          Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
-      </div>
+        <div class="poin-container">
+          <h5 class="imprint-points" data-de="Eigentumsrechte" data-en="Proprietary rights"></h5>
+          <p data-de="Abgesehen von dem Design, das der <span class=&quot;legal-highlight&quot;>Developer Akademie GmbH</span> gehört, behalten wir, die aufgeführten Studierenden, alle Eigentumsrechte an <span class=&quot;legal-highlight&quot;>Portfolio</span>, einschließlich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und sonstiger eigentumsrechtlicher Informationen."
+            data-en="Aside from the design owned by <span class=&quot;legal-highlight&quot;>Developer Akademie GmbH</span>, we, the listed students, retain all proprietary rights in <span class=&quot;legal-highlight&quot;>Portfolio</span>, including any associated copyrighted material, trademarks, and other proprietary information.">
+          </p>
+        </div>
 
-      <hr class="legal-divider">
+        <div class="poin-container">
+          <h5 class="imprint-points" data-de="Nutzung des Produkts" data-en="Use of the product"></h5>
+          <p data-de="<span class=&quot;legal-highlight&quot;>Portfolio</span> ist ausschließlich für rechtmäßige Zwecke bestimmt, in Übereinstimmung mit allen geltenden Gesetzen und Vorschriften. Jede Nutzung von <span class=&quot;legal-highlight&quot;>Portfolio</span> für illegale Aktivitäten oder zur Belästigung, Schädigung, Bedrohung oder Einschüchterung einer anderen Person ist ausdrücklich verboten. Du bist allein verantwortlich für deine Interaktionen mit anderen Nutzern von <span class=&quot;legal-highlight&quot;>Portfolio</span>."
+            data-en="<span class=&quot;legal-highlight&quot;>Portfolio</span> is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of <span class=&quot;legal-highlight&quot;>Portfolio</span> for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of <span class=&quot;legal-highlight&quot;>Portfolio</span>.">
+          </p>
+        </div>
 
-      <div class="legal-section">
-        <h3>EN – Legal Notice</h3>
+        <div class="poin-container">
+          <h5 class="imprint-points" data-de="Haftungsausschluss und Haftungsbeschränkung"
+            data-en="Disclaimer of warranties and limitation of liability"></h5>
+          <p data-de="<span class=&quot;legal-highlight&quot;>Portfolio</span> wird ohne jegliche ausdrückliche oder stillschweigende Garantie bereitgestellt, einschließlich, aber nicht beschränkt auf stillschweigende Garantien der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung. In keinem Fall haften wir, die aufgeführten Studierenden, oder die <span class=&quot;legal-highlight&quot;>Developer Akademie</span> für direkte, indirekte, zufällige, besondere oder Folgeschäden, einschließlich Gewinnverlust, Datenverlust oder andere immaterielle Verluste, selbst wenn auf die Möglichkeit solcher Schäden hingewiesen wurde."
+            data-en="<span class=&quot;legal-highlight&quot;>Portfolio</span> is provided 'as is' without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the <span class=&quot;legal-highlight&quot;>Developer Akademie</span>, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of <span class=&quot;legal-highlight&quot;>Portfolio</span>.">
+          </p>
+        </div>
 
-        <h4>Information pursuant to § 5 TMG</h4>
-        <p>Bilal Acil<br>Ingolstadt, Germany<br>Email: kontakt@bilal-acil.de</p>
+        <div class="poin-container">
+          <h5 class="imprint-points" data-de="Freistellung" data-en="Indemnity"></h5>
+          <p data-de="Du stimmst zu, uns, die aufgeführten Studierenden, die <span class=&quot;legal-highlight&quot;>Developer Akademie</span> sowie unsere verbundenen Unternehmen, Partner und Mitarbeiter zu entschädigen und schadlos zu halten gegen jegliche Ansprüche, Forderungen, Verluste, Schäden oder Kosten (einschließlich Anwaltsgebühren), die sich aus deiner Nutzung von <span class=&quot;legal-highlight&quot;>Portfolio</span> und/oder deinem Verstoß gegen diesen Legal Notice ergeben."
+            data-en="You agree to indemnify, defend and hold harmless us, the listed students, the <span class=&quot;legal-highlight&quot;>Developer Akademie</span>, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of <span class=&quot;legal-highlight&quot;>Portfolio</span> and/or your breach of this Legal Notice.">
+          </p><br>
+          <p data-de="Für Fragen oder Hinweise kontaktiere uns bitte unter <a href=&quot;mailto:kontakt@bilal-acil.de&quot;>kontakt@bilal-acil.de</a>."
+            data-en="For any questions or notices, please contact us at <a href=&quot;mailto:kontakt@bilal-acil.de&quot;>kontakt@bilal-acil.de</a>."></p>
 
-        <h4>Disclaimer</h4>
-        <p>The contents of this website have been created with the utmost care. However, no guarantee can be given for
-          the accuracy, completeness, or currentness of the content.</p>
+          <p class="legal-date">
+            <span style="color: var(--white);" data-de="Datum: " data-en="Date: "></span><span
+              style="color: var(--white);" id="legal-date"></span>
+          </p>
+        </div>
 
-        <h4>Copyright</h4>
-        <p>The content and works created by the site operator on these pages are subject to German copyright law.
-          Reproduction, processing, distribution, and any kind of exploitation beyond the limits of copyright require
-          the written consent of the respective author or creator.</p>
-
-        <h4>External links</h4>
-        <p>This website contains links to external third-party websites, over whose content no influence is held. The
-          respective provider or operator of the linked pages is always responsible for their content.</p>
       </div>
     </div>
   </section>

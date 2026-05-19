@@ -1,3 +1,6 @@
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 // ===== HERO NAME WIDTH SYNC =====
 function syncHeroNameWidth() {
   const name = document.querySelector('.hero-name');
@@ -45,7 +48,7 @@ function setLang(lang) {
 
   document.querySelectorAll('[data-de][data-en]').forEach(el => {
     if (el.getAttribute('translate') === 'no') return;
-    el.textContent = el.getAttribute(`data-${lang}`);
+    el.innerHTML = el.getAttribute(`data-${lang}`);
   });
 
   btnDe.classList.toggle('active', lang === 'de');
@@ -293,6 +296,7 @@ const scrollAnchors = {
 document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
+    if (legalNotice.classList.contains('active')) closeLegal();
     const y = scrollAnchors[link.getAttribute('href')];
     if (y !== undefined) springScroll(y);
   });
@@ -474,25 +478,44 @@ form.addEventListener('submit', e => {
 });
 
 // ===== LEGAL NOTICE =====
+(function () {
+  const el = document.getElementById('legal-date');
+  if (!el) return;
+  const now = new Date();
+  const lang = currentLang();
+  el.textContent = now.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+})();
+
 const legalNotice = document.getElementById('legal-notice');
 const legalBack = document.getElementById('legal-back');
 const footerLegal = document.querySelector('.footer-legal');
 const mainSections = ['why-me', 'my-skills', 'my-projects', 'references', 'contact']
   .map(cls => document.querySelector('.' + cls));
 
-footerLegal.addEventListener('click', e => {
-  e.preventDefault();
-  mainSections.forEach(s => s.classList.add('d-none'));
-  legalNotice.classList.add('active');
-  setLang(currentLang());
-  requestAnimationFrame(() => springScroll(legalNotice.offsetTop));
+document.getElementById('nav-logo').addEventListener('click', () => {
+  if (legalNotice.classList.contains('active')) closeLegal();
+  springScroll(0);
 });
 
-legalBack.addEventListener('click', () => {
+function closeLegal() {
   legalNotice.classList.remove('active');
   mainSections.forEach(s => s.classList.remove('d-none'));
   springScroll(0);
+}
+
+footerLegal.addEventListener('click', e => {
+  e.preventDefault();
+  if (legalNotice.classList.contains('active')) {
+    closeLegal();
+  } else {
+    mainSections.forEach(s => s.classList.add('d-none'));
+    legalNotice.classList.add('active');
+    setLang(currentLang());
+    requestAnimationFrame(() => springScroll(legalNotice.offsetTop));
+  }
 });
+
+legalBack.addEventListener('click', closeLegal);
 
 // ===== FOOTER ICON HOVER IMAGES =====
 const footerIconImages = document.querySelectorAll('.footer-right img[data-hover]');
