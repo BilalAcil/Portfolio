@@ -54,6 +54,11 @@ function setLang(lang) {
   btnDe.classList.toggle('active', lang === 'de');
   btnEn.classList.toggle('active', lang === 'en');
 
+  const mBtnDe = document.getElementById('mobile-lang-de');
+  const mBtnEn = document.getElementById('mobile-lang-en');
+  if (mBtnDe) mBtnDe.classList.toggle('active', lang === 'de');
+  if (mBtnEn) mBtnEn.classList.toggle('active', lang === 'en');
+
   localStorage.setItem('lang', lang);
 }
 
@@ -516,6 +521,38 @@ footerLegal.addEventListener('click', e => {
 });
 
 legalBack.addEventListener('click', closeLegal);
+
+// ===== MOBILE BURGER MENU =====
+const burgerBtn = document.getElementById('burger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLangDe = document.getElementById('mobile-lang-de');
+const mobileLangEn = document.getElementById('mobile-lang-en');
+
+function closeBurgerMenu() {
+  mobileMenu.classList.remove('active');
+  burgerBtn.classList.remove('open');
+  burgerBtn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+burgerBtn.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('active');
+  burgerBtn.classList.toggle('open', isOpen);
+  burgerBtn.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+mobileLangDe.addEventListener('click', () => setLang('de'));
+mobileLangEn.addEventListener('click', () => setLang('en'));
+
+document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    closeBurgerMenu();
+    const y = scrollAnchors[link.getAttribute('href')];
+    if (y !== undefined) springScroll(y);
+  });
+});
 
 // ===== FOOTER ICON HOVER IMAGES =====
 const footerIconImages = document.querySelectorAll('.footer-right img[data-hover]');
