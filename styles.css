@@ -2432,12 +2432,10 @@ footer {
 
   /* Navbar → fixed top, burger visible */
   .navbar {
-    position: fixed;
+    position: absolute;
     top: 0;
-    bottom: auto;
     padding: 0 24px;
     height: 80px;
-    z-index: 300;
     background-color: transparent;
   }
 
@@ -2483,8 +2481,8 @@ footer {
 
   /* Foto */
   .hero-photo {
-    width: 311px;
-    height: 370px;
+    width: 500px;
+    height: 595px;
   }
 
   /* Text-Bereich */
@@ -2497,7 +2495,7 @@ footer {
 
   .hero-logo {
     height: auto;
-    gap: 20px;
+    gap: 40px;
     justify-content: flex-start;
     width: 100%;
   }
@@ -2518,7 +2516,7 @@ footer {
 
   /* Name */
   .hero-name {
-    font-size: clamp(28px, 8.5vw, 50px);
+    font-size: 80px;
     gap: 2px;
     justify-content: center;
   }
@@ -2526,7 +2524,7 @@ footer {
   /* Titel */
   .hero-title {
     text-align: center;
-    font-size: clamp(14px, 3.8vw, 20px);
+    font-size: 36.3px;
   }
 
   .hero-text-wrapper {
@@ -2588,6 +2586,10 @@ footer {
     transform: translateX(-50%);
     -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 50%);
     mask-image: linear-gradient(to bottom, black 50%, transparent 90%);
+  }
+
+  .logo-container {
+    display: none;
   }
 
 }
