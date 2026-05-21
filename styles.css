@@ -937,6 +937,7 @@ body {
 
 /* ===== Mobile Menu ===== */
 .mobile-menu {
+  margin-top: 10px;
   position: fixed;
   inset: 0;
   width: 100%;
@@ -948,18 +949,43 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  clip-path: circle(0% at calc(100% - 40px) 40px);
-  transition: clip-path 0.5s ease;
+  clip-path: circle(0% at 50% 50%);
   pointer-events: none;
 }
 
 .mobile-menu.active {
-  clip-path: circle(150% at calc(100% - 40px) 40px);
+  clip-path: circle(150% at 50% 50%);
+  opacity: 1;
+  animation: menuOpen 1s ease forwards, menuFade 1s ease forwards;
   pointer-events: all;
 }
 
+@keyframes menuOpen {
+  from { clip-path: circle(60% at 50% 50%); }
+  to   { clip-path: circle(150% at 50% 50%); }
+}
+
+@keyframes menuFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.mobile-menu.closing {
+  animation: menuClose 1s ease forwards, menuFadeOut 1s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes menuClose {
+  from { clip-path: circle(150% at 50% 50%); }
+  to   { clip-path: circle(60% at 50% 50%); }
+}
+
+@keyframes menuFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
 .ellipse-div {
-  margin-top: 66px;
   width: 560px;
   height: 666px;
   background: url('assets/icons/Ellipse 35.png') center / contain no-repeat;
@@ -987,11 +1013,6 @@ body {
   color: var(--bg);
   text-decoration: none;
   transition: color 0.2s;
-}
-
-.mobile-nav-links a:hover,
-.mobile-nav-links a.active {
-  color: var(--white);
 }
 
 .mobile-lang-switcher {
@@ -2605,6 +2626,14 @@ footer {
 
   .logo-container {
     display: none;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
   }
 
 }
