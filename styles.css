@@ -1124,6 +1124,20 @@ h3 {
   margin: 0 22px;
 }
 
+.talk-button-mobile {
+  display: none;
+}
+
+.talk-button-mobile img {
+  height: auto;
+  transition: none;
+}
+
+.talk-button-mobile img:hover {
+  background: none;
+  cursor: pointer;
+}
+
 .talk-button-container img {
   height: 100%;
   border-radius: 30px;
@@ -2678,6 +2692,12 @@ footer {
     display: none;
   }
 
+  .talk-button-mobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   .why-me-text {
     text-align: center;
   }
@@ -2704,6 +2724,33 @@ footer {
     gap: 30px;
   }
 
+  .skills-motivation br {
+    display: none;
+  }
+
+  .my-skills-right {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .skills-ellipse-content {
+    order: -1;
+    width: 50%;
+    padding: 0 40px 0 0;
+    text-align: left;
+  }
+
+  .my-skills-right img {
+    position: relative;
+    z-index: 1;
+  }
+
+  .skills-ellipse-bg {
+    left: 50%;
+  }
+
   .skills-group {
     gap: 6px;
   }
@@ -2714,5 +2761,14 @@ footer {
 
   .projects-container h3 {
     margin-bottom: 40px;
+  }
+
+  .my-skills-right img {
+    width: 130px;
+  }
+
+  .location {
+    gap: 25px;
+    justify-content: center;
   }
 }

@@ -333,6 +333,13 @@ if (talkButton) {
   });
 }
 
+const talkButtonMobile = document.querySelector('.talk-button-mobile');
+if (talkButtonMobile) {
+  talkButtonMobile.addEventListener('click', () => {
+    springScroll(scrollAnchors['#contact'] + 150);
+  });
+}
+
 // ===== PRIVACY OVERLAY =====
 const privacyOverlay = document.getElementById('privacy-overlay');
 const privacyTrigger = document.getElementById('privacy-trigger');
