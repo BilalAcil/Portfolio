@@ -557,8 +557,8 @@ burgerBtn.addEventListener('click', () => {
   }
 });
 
-mobileLangDe.addEventListener('click', () => setLang('de'));
-mobileLangEn.addEventListener('click', () => setLang('en'));
+mobileLangDe.addEventListener('click', () => { setLang('de'); closeBurgerMenu(); });
+mobileLangEn.addEventListener('click', () => { setLang('en'); closeBurgerMenu(); });
 
 document.querySelectorAll('.mobile-nav-links a').forEach(link => {
   link.addEventListener('click', e => {
