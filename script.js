@@ -340,6 +340,19 @@ if (talkButtonMobile) {
   });
 }
 
+// ===== REFERENCES SCROLLBAR FADE =====
+const refCards = document.querySelector('.references-cards');
+if (refCards) {
+  let scrollFadeTimer;
+  refCards.addEventListener('scroll', () => {
+    refCards.classList.add('scrolling');
+    clearTimeout(scrollFadeTimer);
+    scrollFadeTimer = setTimeout(() => {
+      refCards.classList.remove('scrolling');
+    }, 500);
+  });
+}
+
 // ===== PRIVACY OVERLAY =====
 const privacyOverlay = document.getElementById('privacy-overlay');
 const privacyTrigger = document.getElementById('privacy-trigger');
