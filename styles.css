@@ -1351,8 +1351,13 @@ h3 {
   justify-content: center;
 }
 
+.tab-short {
+  display: none;
+}
+
 .project-tab {
   font-family: 'JosefinSans', sans-serif;
+  width: 248px;
   height: 97px;
   padding: 0 20px;
   font-size: 30px;
@@ -1473,6 +1478,10 @@ h3 {
 .panel-tech {
   width: 100%;
   text-align: center;
+}
+
+.panel-header-mobile {
+  display: none;
 }
 
 .panel-tech>span {
@@ -2502,6 +2511,10 @@ footer {
   .background {
     animation-delay: 1.2s;
   }
+
+  .project-tabs {
+    gap: 0;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -2766,6 +2779,103 @@ footer {
     margin-bottom: 40px;
   }
 
+  .project-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    scrollbar-width: none;
+    gap: 0;
+  }
+
+  .project-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-full {
+    display: none;
+  }
+
+  .tab-short {
+    display: inline;
+  }
+
+  .project-tab {
+    flex-shrink: 0;
+    width: 206px;
+    height: 68px;
+    font-size: 24px;
+  }
+
+  .project-panel.active {
+    flex-direction: column;
+    padding: 22px 0 38px 0;
+    gap: 20px;
+  }
+
+  .project-panels {
+    height: auto;
+    border-radius: 0 30px 30px 30px;
+  }
+
+  .panel-left {
+    width: 100%;
+    order: 3;
+    padding: 54px 54px 0 54px;
+  }
+
+  .panel-right {
+    display: contents;
+  }
+
+  .project-duration {
+    display: none;
+  }
+
+  .panel-header-mobile {
+    display: flex;
+    flex-direction: column;
+    order: 0;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .panel-project-name {
+    font-family: 'JosefinSans', sans-serif;
+    font-size: 46px;
+    color: var(--white);
+    margin: 0;
+  }
+
+  .panel-header-mobile h3 {
+    margin: 16px 0 0 0;
+    color: var(--blue);
+  }
+
+  .panel-header-mobile span {
+    font-family: 'JosefinSans', sans-serif;
+    font-size: 14px;
+    color: var(--white);
+    padding-left: 54px;
+    display: none;
+  }
+
+  .panel-screenshot {
+    order: 2;
+    width: 100%;
+    min-height: 330px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .panel-screenshot img {
+    width: 600px;
+  }
+
+  .panel-buttons {
+    order: 4;
+    width: 100%;
+  }
+
   .my-skills-right img {
     width: 130px;
   }
@@ -2773,6 +2883,10 @@ footer {
   .location {
     gap: 25px;
     justify-content: center;
+  }
+
+  .references {
+    padding: 80px 20px 5px;
   }
 
   .references-cards {
@@ -2818,7 +2932,7 @@ footer {
   }
 
   .contact {
-    padding: 150px 20px;
+    padding: 80px 20px;
   }
 
 

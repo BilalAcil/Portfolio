@@ -120,6 +120,7 @@ type();
 const projectsData = [
   {
     tab: '1. Pokédex',
+    techNames: ['HTML', 'JavaScript', 'CSS'],
     duration: { de: 'Dauer: 1 Woche', en: 'Duration: 1 week' },
     blocks: [
       {
@@ -144,6 +145,7 @@ const projectsData = [
   },
   {
     tab: '2. Join',
+    techNames: ['HTML', 'JavaScript', 'CSS', 'Git', 'Firebase'],
     duration: { de: 'Dauer: 5 Wochen', en: 'Duration: 5 weeks' },
     blocks: [
       {
@@ -168,6 +170,7 @@ const projectsData = [
   },
   {
     tab: '3. El Pollo Loco',
+    techNames: ['HTML', 'JavaScript', 'CSS'],
     duration: { de: 'Dauer: 3 Wochen', en: 'Duration: 3 weeks' },
     blocks: [
       {
@@ -192,6 +195,7 @@ const projectsData = [
   },
   {
     tab: '4. DA Bubble',
+    techNames: ['Angular', 'TypeScript', 'Firebase'],
     blocks: [
       {
         heading: { de: 'Über das Projekt', en: 'About the project' },
@@ -215,7 +219,7 @@ function renderProjects() {
     const btn = document.createElement('button');
     btn.className = 'project-tab' + (i === 0 ? ' active' : '');
     btn.dataset.tab = i;
-    btn.textContent = project.tab;
+    btn.innerHTML = `<span class="tab-full">${project.tab}</span><span class="tab-short">${i + 1}. Project</span>`;
     tabsEl.appendChild(btn);
 
     // Blocks HTML
@@ -242,6 +246,14 @@ function renderProjects() {
       `<img src="./assets/icons/technologie icons/${t}" alt="${t.replace('.png', '')}">`
     ).join('');
 
+    // Mobile header HTML (name + tech text + duration)
+    const techText = project.techNames ? project.techNames.join(', ') : '';
+    const mobileHeaderHTML = `<div class="panel-header-mobile">
+      <h3 class="panel-project-name">${project.tab.replace(/^\d+\.\s*/, '')}</h3>
+      ${techText ? `<span data-de="Technologien: ${techText}" data-en="Technologies: ${techText}"></span>` : ''}
+      ${project.duration ? `<span data-de="${project.duration.de}" data-en="${project.duration.en}"></span>` : ''}
+    </div>`;
+
     // Screenshot HTML
     const screenshotHTML = project.img
       ? `<img src="./assets/images/${project.img}" alt="${project.tab}">`
@@ -258,6 +270,7 @@ function renderProjects() {
       <div class="project-panel${i === 0 ? ' active' : ''}">
         <div class="panel-left">${blocksHTML}</div>
         <div class="panel-right">
+          ${mobileHeaderHTML}
           <div class="panel-tech">
             <span>Technologies</span>
             <div class="tech-icons">${techsHTML}</div>
@@ -290,20 +303,19 @@ const savedLang = localStorage.getItem('lang') || 'en';
 setLang(savedLang);
 
 // ===== SCROLL ANCHORS =====
-const scrollAnchors = {
-  '#why-me': 900,
-  '#skills': 1350,
-  '#projects': 2050,
-  '#contact': 3650,
-};
+function getScrollTarget(hash) {
+  const el = document.querySelector(hash);
+  if (!el) return 0;
+  return el.getBoundingClientRect().top + window.scrollY;
+}
 
 
 document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     if (legalNotice.classList.contains('active')) closeLegal();
-    const y = scrollAnchors[link.getAttribute('href')];
-    if (y !== undefined) springScroll(y);
+    const y = getScrollTarget(link.getAttribute('href'));
+    if (y) springScroll(y);
   });
 });
 
@@ -329,14 +341,14 @@ const sectionObserver = new IntersectionObserver(entries => {
 const talkButton = document.querySelector('.talk-button-container');
 if (talkButton) {
   talkButton.addEventListener('click', () => {
-    springScroll(scrollAnchors['#contact']);
+    springScroll(getScrollTarget('#contact'));
   });
 }
 
 const talkButtonMobile = document.querySelector('.talk-button-mobile');
 if (talkButtonMobile) {
   talkButtonMobile.addEventListener('click', () => {
-    springScroll(scrollAnchors['#contact'] + 150);
+    springScroll(getScrollTarget('#contact'));
   });
 }
 
@@ -584,8 +596,8 @@ document.querySelectorAll('.mobile-nav-links a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     closeBurgerMenu();
-    const y = scrollAnchors[link.getAttribute('href')];
-    if (y !== undefined) springScroll(y);
+    const y = getScrollTarget(link.getAttribute('href'));
+    if (y) springScroll(y);
   });
 });
 
