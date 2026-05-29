@@ -257,7 +257,7 @@ function renderProjects() {
     // Screenshot HTML
     const screenshotHTML = project.img
       ? `<img src="./assets/images/${project.img}" alt="${project.tab}">`
-      : `<span>Coming soon...</span>`;
+      : `<img src="./assets/images/comin-soon-img.png" alt="Coming soon">`;
 
     // Buttons HTML
     const buttonsHTML = [
