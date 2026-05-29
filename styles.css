@@ -1746,6 +1746,11 @@ h3 {
   gap: 20px;
 }
 
+.contact-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .contact-info-item {
   display: flex;
   align-items: center;
