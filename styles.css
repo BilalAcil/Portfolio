@@ -1215,6 +1215,7 @@ h3 {
   opacity: 0.15;
 }
 
+
 .skills-ellipse-content {
   position: relative;
   z-index: 1;
@@ -1382,7 +1383,6 @@ h3 {
 
 .project-panels {
   width: 100%;
-  max-width: 1440px;
   height: 550px;
   display: flex;
   justify-content: center;
@@ -1394,6 +1394,7 @@ h3 {
 }
 
 .project-panel.active {
+  max-width: 1440px;
   padding: 50px 100px;
   display: flex;
 }
@@ -2878,6 +2879,16 @@ footer {
 
   .my-skills-right img {
     width: 130px;
+  }
+
+  .my-skills-right:hover .skills-ellipse-bg {
+    transform: none;
+    opacity: 0.07;
+  }
+
+  .my-skills-right:has(img:hover) .skills-ellipse-bg {
+    transform: rotate(45deg);
+    opacity: 0.15;
   }
 
   .location {
