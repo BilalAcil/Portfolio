@@ -596,6 +596,10 @@ document.querySelectorAll('.mobile-nav-links a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     closeBurgerMenu();
+    if (legalNotice.classList.contains('active')) {
+      legalNotice.classList.remove('active');
+      mainSections.forEach(s => s.classList.remove('d-none'));
+    }
     const y = getScrollTarget(link.getAttribute('href'));
     if (y) springScroll(y);
   });
