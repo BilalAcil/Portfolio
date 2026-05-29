@@ -2916,7 +2916,8 @@ footer {
     transition: scrollbar-color 0.5s ease;
   }
 
-  .references-cards.scrolling {
+  .references-cards.scrolling,
+  .references-cards:hover {
     scrollbar-color: var(--blue) transparent;
   }
 
@@ -2942,7 +2943,8 @@ footer {
     transition: background-color 0.5s ease;
   }
 
-  .references-cards.scrolling::-webkit-scrollbar-thumb {
+  .references-cards.scrolling::-webkit-scrollbar-thumb,
+  .references-cards:hover::-webkit-scrollbar-thumb {
     background-color: var(--blue);
   }
 
