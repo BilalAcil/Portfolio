@@ -2812,6 +2812,8 @@ footer {
   }
 
   .project-panel.active {
+    display: flex;
+    align-items: center;
     flex-direction: column;
     padding: 22px 0 38px 0;
     gap: 20px;
@@ -2825,7 +2827,7 @@ footer {
   .panel-left {
     width: 100%;
     order: 3;
-    padding: 54px 54px 0 54px;
+    padding: 20px 54px 0 54px;
   }
 
   .panel-right {
@@ -2866,14 +2868,8 @@ footer {
 
   .panel-screenshot {
     order: 2;
-    width: 100%;
-    min-height: 330px;
     display: flex;
     justify-content: center;
-  }
-
-  .panel-screenshot img {
-    width: 600px;
   }
 
   .panel-buttons {
@@ -2970,16 +2966,89 @@ footer {
     display: block;
   }
 
+  .footer-container {
+    padding: 0px 50px;
+  }
+
+}
+
+@media (max-width: 950px) {
+  .footer-container {
+    padding: 0px 20px;
+  }
 }
 
 @media (max-width: 885px) {
   .arrow-up-container {
     padding: 0px 350px;
   }
+
+  .project-tab {
+    width: 150px;
+    height: 60px;
+  }
 }
 
 @media (max-width: 785px) {
   .arrow-up-container {
     padding: 0px 400px;
+  }
+
+  .my-skills-left img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 700px) {
+  .arrow-up-container {
+    padding: 0px 420px;
+  }
+
+  .my-skills-left img {
+    height: 70px;
+  }
+}
+
+@media (max-width: 650px) {
+  .references-container h3 {
+    font-size: 28px;
+  }
+
+  .project-tab {
+    width: 136px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .my-skills-right {
+    gap: 0;
+  }
+
+  .skills-ellipse-bg {
+    left: 60%;
+  }
+
+  .my-skills-right img {
+    width: 100px;
+  }
+
+  .skills-ellipse-content {
+    width: 60%;
+    padding: 0 38px 0 0;
+  }
+
+  .arrow-up-container {
+    display: flex;
+    justify-content: center;
+    height: 95%;
+    align-items: flex-end;
+  }
+
+  .contact-form {
+    gap: 0;
+  }
+
+  .contact {
+    padding: 80px 20px 160px;
   }
 }

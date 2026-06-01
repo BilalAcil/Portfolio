@@ -363,6 +363,10 @@ if (refCards) {
       refCards.classList.remove('scrolling');
     }, 500);
   });
+
+  if (window.innerWidth <= 700 && window.innerWidth > 650) {
+    refCards.scrollLeft = (refCards.scrollWidth - refCards.clientWidth) / 2;
+  }
 }
 
 // ===== PRIVACY OVERLAY =====
