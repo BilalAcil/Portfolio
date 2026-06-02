@@ -145,7 +145,7 @@ const projectsData = [
   },
   {
     tab: '2. Join',
-    techNames: ['HTML', 'JavaScript', 'CSS', 'Git', 'Firebase'],
+    techNames: ['HTML', 'CSS', 'JavaScript', 'Git', 'Supabase'],
     duration: { de: 'Dauer: 5 Wochen', en: 'Duration: 5 weeks' },
     blocks: [
       {
@@ -195,7 +195,7 @@ const projectsData = [
   },
   {
     tab: '4. DA Bubble',
-    techNames: ['Angular', 'TypeScript', 'Firebase'],
+    techNames: ['Angular', 'TypeScript', 'Supabase'],
     blocks: [
       {
         heading: { de: 'Über das Projekt', en: 'About the project' },
@@ -253,6 +253,8 @@ function renderProjects() {
       ${techText ? `<span data-de="Technologien: ${techText}" data-en="Technologies: ${techText}"></span>` : ''}
       ${project.duration ? `<span data-de="${project.duration.de}" data-en="${project.duration.en}"></span>` : ''}
     </div>`;
+    const mobileTechTextHTML = techText ? `<div class="panel-tech-text" data-de="Technologien: ${techText}" data-en="Technologies: ${techText}"></div>` : '';
+    const mobileDurationTextHTML = project.duration ? `<div class="panel-duration-text" data-de="${project.duration.de}" data-en="${project.duration.en}"></div>` : '';
 
     // Screenshot HTML
     const screenshotHTML = project.img
@@ -275,6 +277,8 @@ function renderProjects() {
             <span>Technologies</span>
             <div class="tech-icons">${techsHTML}</div>
           </div>
+          ${mobileTechTextHTML}
+          ${mobileDurationTextHTML}
           <div class="panel-screenshot${project.img ? '' : ' panel-screenshot--soon'}">${screenshotHTML}</div>
           <div class="panel-buttons">${buttonsHTML}</div>
         </div>

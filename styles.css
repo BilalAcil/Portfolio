@@ -1483,6 +1483,11 @@ h3 {
   display: none;
 }
 
+.panel-tech-text,
+.panel-duration-text {
+  display: none;
+}
+
 .panel-tech>span {
   font-family: 'JosefinSans', sans-serif;
   font-size: 18px;
@@ -1598,6 +1603,18 @@ h3 {
   color: var(--blue);
   text-align: center;
   font-weight: 400;
+}
+
+.references-subtitle {
+  display: block;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 28px;
+  color: var(--blue);
+  text-align: center;
+}
+
+.references-container {
+  gap: 10px;
 }
 
 
@@ -1716,7 +1733,6 @@ h3 {
 }
 
 .contact h3 {
-  font-family: 'JosefinSans', sans-serif;
   font-size: 54px;
   font-weight: 400;
   color: var(--blue);
@@ -2913,6 +2929,7 @@ footer {
     justify-content: flex-start;
     width: 100%;
     padding-bottom: 12px;
+    margin-top: 40px;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
     transition: scrollbar-color 0.5s ease;
@@ -2952,11 +2969,6 @@ footer {
 
   .contact {
     padding: 80px 20px;
-  }
-
-
-  .references-container {
-    gap: 40px;
   }
 
   .contact-container {
@@ -3134,6 +3146,112 @@ footer {
 
   .my-skills-left {
     gap: 10px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  .contact h3 {
+    font-size: 32px;
+  }
+
+  .hero-photo {
+    width: 300px;
+    height: 357px;
+  }
+
+  .ellipse-div {
+    width: 360px;
+    height: 428px;
+  }
+
+  .hero-name {
+    font-size: 58px;
+    gap: 1px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .location {
+    height: 36px;
+  }
+
+  .location-text span {
+    font-size: 18px;
+  }
+
+  .location-text {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .project-tab {
+    width: 90px;
+    height: 43px;
+    font-size: 18px;
+  }
+
+  .panel-header-mobile h3 {
+    font-size: 24px;
+  }
+
+  .panel-header-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 80px;
+  }
+
+  .projects-container h3 {
+    width: auto;
+  }
+
+  .panel-tech-text,
+  .panel-duration-text {
+    display: block;
+    order: 1;
+    width: 100%;
+    margin-left: 80px;
+    font-family: 'JosefinSans', sans-serif;
+    font-size: 14px;
+    color: var(--white);
+  }
+
+  .panel-duration-text {
+    margin-top: -12px;
+  }
+
+  .panel-tech {
+    display: none;
+  }
+
+  .references-container h3 {
+    font-family: 'Anta', sans-serif;
+    font-size: 32px;
+  }
+
+  .references-subtitle {
+    display: block;
+    font-family: 'JosefinSans', sans-serif;
+    font-size: 18px;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .references-container {
+    align-items: flex-start;
+  }
+
+  .references-cards {
+    margin-top: 40px;
+  }
+
+  .arrow-up-container {
+    height: 91%;
   }
 }
 
