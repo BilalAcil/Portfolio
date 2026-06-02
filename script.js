@@ -338,14 +338,14 @@ const sectionObserver = new IntersectionObserver(entries => {
 });
 
 // Talk button scroll to contact
-const talkButton = document.querySelector('.talk-button-container');
+const talkButton = document.querySelector('.talk-button-container img');
 if (talkButton) {
   talkButton.addEventListener('click', () => {
     springScroll(getScrollTarget('#contact'));
   });
 }
 
-const talkButtonMobile = document.querySelector('.talk-button-mobile');
+const talkButtonMobile = document.querySelector('.talk-button-mobile img');
 if (talkButtonMobile) {
   talkButtonMobile.addEventListener('click', () => {
     springScroll(getScrollTarget('#contact'));
