@@ -1596,6 +1596,12 @@ h3 {
   gap: 60px;
 }
 
+.teamplayer-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
 .references-container h3 {
   font-family: 'JosefinSans', sans-serif;
   font-size: 32px;
@@ -1608,15 +1614,10 @@ h3 {
 .references-subtitle {
   display: block;
   font-family: 'JosefinSans', sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   color: var(--blue);
   text-align: center;
 }
-
-.references-container {
-  gap: 10px;
-}
-
 
 .references-cards {
   display: flex;
@@ -1743,6 +1744,7 @@ h3 {
   display: flex;
   gap: 36px;
   align-items: flex-start;
+  z-index: 9999;
 }
 
 .contact-intro {
@@ -1904,6 +1906,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  z-index: 9999;
 }
 
 .form-checkbox {
@@ -2998,6 +3001,21 @@ footer {
   .footer-container {
     padding: 0px 20px;
   }
+
+  .teamplayer-header {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .references-container {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+  }
 }
 
 @media (max-width: 885px) {
@@ -3036,8 +3054,10 @@ footer {
 }
 
 @media (max-width: 650px) {
-  .references-container h3 {
-    font-size: 28px;
+
+  .references-container h3,
+  .references-subtitle {
+    font-size: 26px;
   }
 
   .project-tab {
@@ -3074,6 +3094,7 @@ footer {
 
   .contact-form {
     gap: 0;
+    z-index: 9999;
   }
 
   .contact {
@@ -3252,6 +3273,11 @@ footer {
 
   .arrow-up-container {
     height: 91%;
+  }
+
+  .teamplayer-header {
+    align-items: flex-start;
+    gap: 10px;
   }
 }
 
