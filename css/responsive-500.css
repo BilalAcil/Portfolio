@@ -529,11 +529,28 @@
   .legal-notice {
     padding: 80px 10px;
   }
+
 }
 
 @media (max-width: 400px) {
   .ellipse-div {
     width: 350px;
     height: 416px;
+  }
+
+  .privacy-overlay {
+    padding: 10px;
+  }
+
+  .privacy-content h2 {
+    text-align: left;
+  }
+
+  .privacy-section h3 {
+    text-align: left;
+  }
+
+  .privacy-content {
+    padding: 48px 10px;
   }
 }

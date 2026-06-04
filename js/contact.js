@@ -1,0 +1,159 @@
+﻿// ===== PRIVACY OVERLAY =====
+const privacyOverlay = document.getElementById('privacy-overlay');
+const privacyTrigger = document.getElementById('privacy-trigger');
+const privacyClose = document.getElementById('privacy-close');
+
+privacyTrigger.addEventListener('click', e => {
+  e.preventDefault();
+  privacyOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+
+privacyClose.addEventListener('click', () => {
+  privacyOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+});
+
+privacyOverlay.addEventListener('click', e => {
+  if (e.target === privacyOverlay) {
+    privacyOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+// ===== FORM VALIDATION =====
+const form = document.getElementById('contact-form');
+const sendBtn = form.querySelector('.btn-send');
+const privacyCheckbox = document.getElementById('privacy');
+
+const validators = {
+  name: v => v.trim().length >= 2,
+  email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+  message: v => v.trim().length >= 10,
+};
+
+const errorTexts = {
+  de: {
+    name: 'Bitte gib deinen Namen ein (mind. 2 Zeichen).',
+    email: 'Bitte gib eine gÃ¼ltige E-Mail-Adresse ein.',
+    message: 'Deine Nachricht muss mind. 10 Zeichen lang sein.',
+  },
+  en: {
+    name: 'Please enter your name (at least 2 characters).',
+    email: 'Please enter a valid email address.',
+    message: 'Your message must be at least 10 characters long.',
+  }
+};
+
+function currentLang() {
+  return document.documentElement.getAttribute('data-lang') || 'en';
+}
+
+function showError(field, msg) {
+  const group = field.closest('.form-group');
+  let err = group.querySelector('.field-error');
+  if (!err) {
+    err = document.createElement('span');
+    err.className = 'field-error';
+    group.appendChild(err);
+  }
+  err.textContent = msg;
+  field.classList.add('input-error');
+}
+
+function clearError(field) {
+  const group = field.closest('.form-group');
+  const err = group.querySelector('.field-error');
+  if (err) err.textContent = '';
+  field.classList.remove('input-error');
+}
+
+function validateField(field) {
+  const name = field.name;
+  if (!validators[name]) return true;
+  const valid = validators[name](field.value);
+  valid ? clearError(field) : showError(field, errorTexts[currentLang()][name]);
+  return valid;
+}
+
+function isFormValid() {
+  return validators.name(form.name.value)
+    && validators.email(form.email.value)
+    && validators.message(form.message.value)
+    && privacyCheckbox.checked;
+}
+
+function updateSendBtn() {
+  const active = isFormValid();
+  sendBtn.disabled = !active;
+  sendBtn.classList.toggle('btn-disabled', !active);
+}
+
+updateSendBtn();
+
+['name', 'email', 'message'].forEach(name => {
+  form[name].addEventListener('blur', () => {
+    validateField(form[name]);
+    updateSendBtn();
+  });
+});
+
+privacyCheckbox.addEventListener('change', () => {
+  privacyCheckbox.classList.toggle('input-error', !privacyCheckbox.checked);
+  updateSendBtn();
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!isFormValid()) {
+    if (!privacyCheckbox.checked) privacyCheckbox.classList.add('input-error');
+    updateSendBtn();
+    return;
+  }
+  privacyCheckbox.classList.remove('input-error');
+
+  if (!window.emailjs) {
+    const errMsg = currentLang() === 'de'
+      ? 'E-Mail-Service nicht verfÃ¼gbar. Bitte versuche es spÃ¤ter erneut.'
+      : 'Email service is not available. Please try again later.';
+    alert(errMsg);
+    return;
+  }
+
+  sendBtn.disabled = true;
+  const originalText = sendBtn.textContent;
+  sendBtn.textContent = currentLang() === 'de' ? 'Sende...' : 'Sending...';
+
+  const templateParams = {
+    Name: form.name.value,
+    Email: form.email.value,
+    Nachricht: form.message.value,
+    to_email: 'kontakt@bilal-acil.de'
+  };
+
+  emailjs.send('service_ijq716l', 'template_fi4djrc', templateParams, '5tl1HsbrJ1MBW_ume')
+    .then(() => {
+      emailjs.send('service_ijq716l', 'template_9fbnu2q', {
+        to_email: form.email.value,
+        to_name:  form.name.value,
+      }, '5tl1HsbrJ1MBW_ume');
+
+      const lang = currentLang();
+      const successMsg = lang === 'de'
+        ? 'Danke! Deine Nachricht wurde erfolgreich gesendet.'
+        : 'Thank you! Your message has been sent successfully.';
+      form.innerHTML = `<div class="form-success">${successMsg}</div>`;
+    })
+    .catch(error => {
+      console.error('EmailJS send error:', error);
+      const lang = currentLang();
+      const errorDetails = error && (error.text || error.statusText || error.message || JSON.stringify(error));
+      const failMsg = lang === 'de'
+        ? `Beim Senden ist ein Fehler aufgetreten. Bitte versuche es noch einmal.\n${errorDetails}`
+        : `An error occurred while sending. Please try again.\n${errorDetails}`;
+      alert(failMsg);
+      sendBtn.disabled = false;
+      sendBtn.textContent = originalText;
+    });
+});
+

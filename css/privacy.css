@@ -19,7 +19,7 @@
   background-color: #262e34;
   border: 1px solid rgba(137, 188, 217, 0.25);
   border-radius: 16px;
-  padding: 48px;
+  padding: 48px 20px;
   max-width: 760px;
   width: 100%;
   max-height: 80vh;
@@ -87,4 +87,3 @@
   border-top: 1px solid rgba(137, 188, 217, 0.2);
   margin: 32px 0;
 }
-
