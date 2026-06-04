@@ -1,0 +1,63 @@
+<section class="contact" id="contact">
+  <div class="arrow-up-container">
+    <div class="arrow-up" onclick="springScroll(0)">
+      <img src="./assets/icons/Arrow Up.png" alt="Arrow Up">
+    </div>
+  </div>
+  <div class="contact-container">
+    <h3 data-de="Kontaktiere mich" data-en="Contact me"></h3>
+    <div class="contact-top">
+      <div class="contact-intro-wrapper">
+        <p class="contact-intro"
+          data-de="Auf der Suche nach spannenden Herausforderungen, Projekten oder neuen Chancen. Ich freue mich über Nachrichten zu Vollzeit-, Teilzeit- oder Freelance-Positionen."
+          data-en="Seeking exciting challenges, projects, and new opportunities. I welcome messages regarding full-time, part-time, or freelance positions">
+        </p>
+        <div class="contact-work-together" data-de="Lass uns zusammenarbeiten!" data-en="Let us work together!"></div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-info-item" style="cursor: pointer;">
+          <div class="contact-mail-icon">
+            <img src="./assets/icons/mail-1.png" alt="" class="mail-default">
+            <img src="./assets/icons/mail-2.png" alt="" class="mail-hover">
+          </div>
+          <a href="mailto:kontakt@bilal-acil.de">kontakt@bilal-acil.de</a>
+        </div>
+        <div class="contact-info-item" style="cursor: default;">
+          <div class="contact-info-icon contact-phone-icon"></div>
+          <span data-de="Tel: auf Anfrage" data-en="Tel: on request"></span>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label data-de="Dein Name" data-en="Your name"></label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+          <label data-de="Deine E-Mail" data-en="Your Email"></label>
+          <input type="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-de="Deine Nachricht" data-en="Your Message"></label>
+        <textarea name="message" rows="6" required></textarea>
+      </div>
+      <div class="form-footer">
+        <div class="form-checkbox">
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">
+            <span data-de="Ich habe die " data-en="I've read the "></span><a href="#" class="privacy-link" id="privacy-trigger" data-de="Datenschutzerklärung" data-en="privacy policy"></a><span data-de=" gelesen und stimme der Verarbeitung meiner Daten zu." data-en=" and agree to the processing of my data as outlined."></span>
+          </label>
+        </div>
+        <button type="submit" class="btn-send" data-de="Senden" data-en="Send"></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div class="arrow-up-mobile-container">
+  <div class="arrow-up" onclick="springScroll(0)">
+    <img src="./assets/icons/Arrow Up.png" alt="Arrow Up">
+  </div>
+</div>
