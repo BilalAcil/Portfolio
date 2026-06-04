@@ -2304,7 +2304,7 @@ footer {
   transition: background 0.3s ease, color 0.3s ease;
   width: 72px;
   height: 38px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -2614,6 +2614,14 @@ footer {
     max-height: none;
     margin-top: 0;
     gap: 28px;
+  }
+
+  .legal-back {
+    display: flex;
+  }
+
+  .legal-notice {
+    padding: 80px 40px;
   }
 
   /* Foto */
@@ -3139,6 +3147,14 @@ footer {
     width: 100%;
     padding: 0 20px;
   }
+
+  .navbar {
+    padding: 0px 20px;
+  }
+
+  .legal-notice {
+    padding: 80px 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -3588,6 +3604,14 @@ footer {
 
   .contact-intro {
     text-align: left;
+  }
+
+  .navbar {
+    padding: 0px 10px;
+  }
+
+  .legal-notice {
+    padding: 80px 10px;
   }
 }
 
