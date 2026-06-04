@@ -318,7 +318,11 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     if (legalNotice.classList.contains('active')) closeLegal();
-    const y = getScrollTarget(link.getAttribute('href'));
+    const hash = link.getAttribute('href');
+    let y = getScrollTarget(hash);
+    if (window.innerWidth > 1000 && (hash === '#skills' || hash === '#projects')) {
+      y -= 104;
+    }
     if (y) springScroll(y);
   });
 });
@@ -475,12 +479,18 @@ updateSendBtn();
 
 privacyCheckbox.addEventListener('change', updateSendBtn);
 
+privacyCheckbox.addEventListener('change', () => {
+  privacyCheckbox.classList.toggle('input-error', !privacyCheckbox.checked);
+});
+
 form.addEventListener('submit', e => {
   e.preventDefault();
   if (!isFormValid()) {
+    if (!privacyCheckbox.checked) privacyCheckbox.classList.add('input-error');
     updateSendBtn();
     return;
   }
+  privacyCheckbox.classList.remove('input-error');
 
   if (!window.emailjs) {
     const errMsg = currentLang() === 'de'

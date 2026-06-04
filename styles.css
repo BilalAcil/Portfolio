@@ -91,6 +91,7 @@ body {
 .hero-photo {
   position: relative;
   height: 705px;
+  max-height: 100vh;
   width: 611px;
 }
 
@@ -1754,16 +1755,22 @@ h3 {
   display: flex;
   gap: 36px;
   align-items: flex-start;
-  z-index: 9999;
+}
+
+.contact-intro-wrapper {
+  width: 50%;
 }
 
 .contact-intro {
-  width: 50%;
   font-family: 'JosefinSans', sans-serif;
   font-size: 18px;
   color: var(--white);
   line-height: 120%;
   cursor: default;
+}
+
+.contact-work-together {
+  display: none;
 }
 
 .contact-info {
@@ -1932,23 +1939,28 @@ h3 {
   height: 22px;
   flex-shrink: 0;
   cursor: pointer;
-  background-image: url('./assets/icons/Ellipse 32.png');
+  background-image: url("assets/icons/Property 1=Default.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .form-checkbox input[type="checkbox"]:hover {
-  background-image: url('./assets/icons/Ellipse 32_hover.png');
+  background-image: url("assets/icons/Property 1=hover.png");
 }
 
 .form-checkbox input[type="checkbox"]:checked {
-  background-image: url('./assets/icons/Ellipse 32_Checked.png');
+  background-image: url("assets/icons/Property 1=Checked.png");
+}
+
+.form-checkbox input[type="checkbox"].input-error {
+  background-image: url("assets/icons/Property 1=error.png");
 }
 
 .form-checkbox label {
   font-family: 'JosefinSans', sans-serif;
   font-size: 14px;
+  line-height: 120%;
   color: var(--white);
   cursor: default;
 }
@@ -3098,7 +3110,7 @@ footer {
     padding: 0;
     display: flex;
     justify-content: center;
-    height: 95%;
+    height: 93%;
     align-items: flex-end;
   }
 
@@ -3147,6 +3159,10 @@ footer {
   .skills-ellipse-content {
     width: 70%;
     padding: 0 40px 0 0;
+  }
+
+  .contact-intro-wrapper {
+    width: 60%;
   }
 
 }
@@ -3286,14 +3302,122 @@ footer {
   }
 
   .teamplayer-header {
-    align-items: flex-start;
+    width: 100%;
     gap: 10px;
+  }
+
+  .contact-top {
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .my-skills-left {
+    width: 350px;
+  }
+
+  .planned-padding {
+    padding-bottom: 20px;
   }
 }
 
 @media (max-width: 525px) {
+
+  .hero-content {
+    gap: 20px;
+  }
+
+  .hero-logo {
+    gap: 20px;
+  }
+
+  .why-me-container {
+    margin-top: 60px;
+    gap: 20px;
+  }
+
+  .why-me-info {
+    gap: 20px;
+  }
+
+  .my-skills {
+    margin: 60px 0 0 0;
+  }
+
+  .my-skills-container {
+    gap: 20px;
+  }
+
+  .my-skills-left-right {
+    gap: 20px;
+  }
+
+  .projects-container {
+    margin-top: 60px;
+  }
+
+  .project-block {
+
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .references {
+    padding: 60px 20px 5px;
+  }
+
+  .references-cards {
+    margin-top: 30px;
+  }
+
   .project-tab {
     padding: 0 10px;
+  }
+
+  [data-lang="en"] .teamplayer-header {
+    align-items: flex-start;
+  }
+
+  .contact-container {
+    gap: 20px;
+  }
+
+  .contact-top {
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+
+  .contact-intro {
+    width: 100%;
+    text-align: start;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .panel-left {
+    gap: 20px;
+  }
+
+  .contact-work-together {
+    display: block;
+    font-family: 'JosefinSans', sans-serif;
+    font-size: 20px;
+    color: var(--blue);
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .contact-intro-wrapper {
+    width: 100%;
+  }
+
+  .arrow-up-container {
+    height: 100%;
   }
 }
 
@@ -3344,5 +3468,132 @@ footer {
     order: 3;
     padding: 0 20px;
     height: 85px;
+  }
+
+  .my-skills-left-right {
+    gap: 0;
+  }
+
+  .my-skills-left {
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .panel-screenshot {
+    width: 350px;
+    min-height: 210px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-center {
+    order: 1;
+  }
+
+  .footer-right {
+    order: 2;
+  }
+
+  .footer-left {
+    order: 3;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .footer-legal {
+    font-size: 14px;
+  }
+
+  .footer-copy {
+    font-size: 14px;
+  }
+
+  .footer-name {
+    color: var(--white);
+  }
+
+  .footer-role {
+    color: var(--nav-text);
+  }
+
+  .hero-content {
+    padding: 96px 10px 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  .why-me-text {
+    padding: 0 10px;
+  }
+
+  .skills-motivation-p1,
+  .skills-motivation-p2 {
+    padding: 0 10px;
+  }
+
+  .panel-left {
+    padding: 20px 60px 0 60px;
+  }
+
+  .panel-header-mobile {
+    margin-left: 0;
+    padding-left: 30px;
+  }
+
+  .panel-header-mobile h3 {
+    margin: 0;
+  }
+
+  .panel-tech-text,
+  .panel-duration-text {
+    margin-left: 0;
+    padding-left: 30px;
+  }
+
+  .project-block {
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .panel-left {
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .contact {
+    padding: 60px 10px 180px;
+  }
+
+  .form-row {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .arrow-up-container {
+    height: 122%;
+  }
+
+  .form-footer {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .contact-top {
+    align-items: flex-start;
+  }
+
+  .contact-intro {
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .ellipse-div {
+    width: 350px;
+    height: 416px;
   }
 }
