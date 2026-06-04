@@ -306,13 +306,19 @@ renderProjects();
 const savedLang = localStorage.getItem('lang') || 'en';
 setLang(savedLang);
 
+// ===== LEGAL NOTICE ELEMENTS =====
+const legalNotice = document.getElementById('legal-notice');
+const legalBack = document.getElementById('legal-back');
+const footerLegal = document.querySelector('.footer-legal');
+const mainSections = ['why-me', 'my-skills', 'my-projects', 'references', 'contact']
+  .map(cls => document.querySelector('.' + cls));
+
 // ===== SCROLL ANCHORS =====
 function getScrollTarget(hash) {
   const el = document.querySelector(hash);
   if (!el) return 0;
   return el.getBoundingClientRect().top + window.scrollY;
 }
-
 
 document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
@@ -477,10 +483,9 @@ updateSendBtn();
   });
 });
 
-privacyCheckbox.addEventListener('change', updateSendBtn);
-
 privacyCheckbox.addEventListener('change', () => {
   privacyCheckbox.classList.toggle('input-error', !privacyCheckbox.checked);
+  updateSendBtn();
 });
 
 form.addEventListener('submit', e => {
@@ -545,12 +550,6 @@ form.addEventListener('submit', e => {
   const lang = currentLang();
   el.textContent = now.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 })();
-
-const legalNotice = document.getElementById('legal-notice');
-const legalBack = document.getElementById('legal-back');
-const footerLegal = document.querySelector('.footer-legal');
-const mainSections = ['why-me', 'my-skills', 'my-projects', 'references', 'contact']
-  .map(cls => document.querySelector('.' + cls));
 
 document.getElementById('nav-logo').addEventListener('click', () => {
   if (legalNotice.classList.contains('active')) closeLegal();

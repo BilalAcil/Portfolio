@@ -791,17 +791,6 @@ body {
   opacity: 0.8;
 }
 
-.nav-logo-sub {
-  display: none;
-  font-family: 'JosefinSans', sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  color: var(--bg);
-  letter-spacing: 1.5px;
-  opacity: 0.7;
-  text-transform: lowercase;
-}
-
 /* Nav links */
 .nav-links {
   display: flex;
@@ -1090,7 +1079,7 @@ h3 {
 }
 
 .location-text span {
-  font-family: 'JosefinSans';
+  font-family: 'JosefinSans', sans-serif;
   color: var(--white);
   font-weight: bold;
   font-size: 30px;
@@ -1104,7 +1093,7 @@ h3 {
 
 .why-me-text {
   width: 50%;
-  font-family: 'JosefinSans';
+  font-family: 'JosefinSans', sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: var(--white);
@@ -1227,21 +1216,6 @@ h3 {
   text-align: center;
 }
 
-.skills-learning-label {
-  font-family: 'JosefinSans', sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: var(--white);
-  opacity: 0.7;
-}
-
-.skills-learning-icons {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-}
-
 .skills-motivation {
   font-family: 'JosefinSans', sans-serif;
   font-size: 18px;
@@ -1260,12 +1234,12 @@ h3 {
   text-align: center;
 }
 
-.icon-conatainer {
+.icon-container {
   display: flex;
   width: 100%;
 }
 
-.icon-conatainer div {
+.icon-container div {
   width: 25%;
   display: flex;
   justify-content: center;
@@ -2366,13 +2340,6 @@ footer {
   color: var(--muted);
 }
 
-.legal-divider {
-  border: none;
-  border-top: 1px solid rgba(137, 188, 217, 0.2);
-  margin: 32px 0;
-}
-
-
 .imprint {
   font-family: 'JosefinSans', sans-serif;
   font-size: 24px;
@@ -2753,6 +2720,10 @@ footer {
     display: none;
   }
 
+  body:has(#legal-notice.active) .arrow-up-mobile-container {
+    display: none;
+  }
+
 
   .why-me-container {
     height: auto;
@@ -2793,9 +2764,6 @@ footer {
 
   .my-skills-left-right {
     flex-direction: column;
-  }
-
-  .my-skills-left-right {
     height: auto;
     gap: 40px;
   }
