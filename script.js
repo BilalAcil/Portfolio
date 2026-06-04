@@ -513,6 +513,11 @@ form.addEventListener('submit', e => {
 
   emailjs.send('service_ijq716l', 'template_fi4djrc', templateParams, '5tl1HsbrJ1MBW_ume')
     .then(() => {
+      emailjs.send('service_ijq716l', 'template_9fbnu2q', {
+        to_email: form.email.value,
+        to_name:  form.name.value,
+      }, '5tl1HsbrJ1MBW_ume');
+
       const lang = currentLang();
       const successMsg = lang === 'de'
         ? 'Danke! Deine Nachricht wurde erfolgreich gesendet.'

@@ -2390,6 +2390,10 @@ footer {
 
 }
 
+.arrow-up-mobile-container {
+  display: none;
+}
+
 /* ===== MOBILE ===== */
 
 @media (max-width: 1300px) {
@@ -3114,12 +3118,13 @@ footer {
   }
 
   .arrow-up-container {
-    width: 100%;
-    padding: 0;
+    display: none;
+  }
+
+  .arrow-up-mobile-container {
     display: flex;
     justify-content: center;
-    height: 93%;
-    align-items: flex-end;
+    margin-bottom: 80px;
   }
 
   .contact-form {
@@ -3128,7 +3133,7 @@ footer {
   }
 
   .contact {
-    padding: 80px 20px 180px;
+    padding: 80px 20px 80px;
   }
 
   .contact-intro {
