@@ -1,0 +1,294 @@
+﻿/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 104px;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100px;
+  z-index: 100;
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+/* Nav logo */
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 72px;
+}
+
+.nav-logo-icon img {
+  display: flex;
+  width: 32px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.nav-logo-text {
+  font-family: 'Anta', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--bg);
+  letter-spacing: 1px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 56px;
+}
+
+.nav-links a {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+.nav-links li {
+  width: 121px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--bg);
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.lang-btn div {
+  position: relative;
+  width: 36.8px;
+  height: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.lang-btn div::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/icons/Ellipse 24.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+}
+
+.lang-btn:not(.active):hover {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.lang-switcher:has(.lang-btn:not(.active):hover) .lang-btn.active div {
+  background-image: none;
+}
+
+.lang-switcher:has(.lang-btn:not(.active):hover) .lang-btn.active {
+  color: var(--bg);
+}
+
+.lang-btn.active:hover {
+  cursor: default;
+  color: var(--white);
+}
+
+.lang-btn.active {
+  color: var(--white);
+  padding: 0;
+  transition: color 0.4s ease;
+}
+
+.lang-btn.active div {
+  width: 36.8px;
+  height: 24px;
+}
+
+.lang-btn.active div::before {
+  opacity: 1;
+}
+
+.lang-switcher:has(.lang-btn:not(.active):hover) .lang-btn.active div::before {
+  opacity: 0;
+}
+
+/* ===== Burger Button ===== */
+.burger-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.burger-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-btn.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-btn.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+  margin-top: 67px;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 200;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  clip-path: circle(0% at 50% 50%);
+  pointer-events: none;
+}
+
+.mobile-menu.active {
+  clip-path: circle(150% at 50% 50%);
+  opacity: 1;
+  animation: menuOpen 1s ease forwards, menuFade 1s ease forwards;
+  pointer-events: all;
+}
+
+@keyframes menuOpen {
+  from {
+    clip-path: circle(60% at 50% 50%);
+  }
+
+  to {
+    clip-path: circle(150% at 50% 50%);
+  }
+}
+
+@keyframes menuFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-menu.closing {
+  animation: menuClose 1s ease forwards, menuFadeOut 1s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes menuClose {
+  from {
+    clip-path: circle(150% at 50% 50%);
+  }
+
+  to {
+    clip-path: circle(60% at 50% 50%);
+  }
+}
+
+@keyframes menuFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.ellipse-div {
+  width: 560px;
+  height: 666px;
+  background: url('../assets/icons/Ellipse 35.png') center / contain no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.mobile-nav-links a {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--bg);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.mobile-lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+

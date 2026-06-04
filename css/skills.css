@@ -1,0 +1,162 @@
+﻿.my-skills {
+  width: 100%;
+  height: 560px;
+  display: flex;
+  justify-content: center;
+  margin: 150px 0;
+}
+
+.my-skills-container {
+  width: 870px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my-skills-left-right {
+  height: 404px;
+  gap: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.my-skills-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my-skills-left img {
+  height: 100px;
+}
+
+.my-skills-right {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.skills-ellipse-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/icons/Ellipse 25.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+  transition: transform 0.8s ease, opacity 0.4s ease;
+  opacity: 0.07;
+}
+
+.my-skills-right img {
+  width: 160px;
+}
+
+.my-skills-right:hover .skills-ellipse-bg {
+  transform: rotate(45deg);
+  opacity: 0.15;
+}
+
+
+.skills-ellipse-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 35px 55px;
+  text-align: center;
+}
+
+.skills-motivation {
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 18px;
+  cursor: default;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.skills-motivation-p1,
+.skills-motivation-p2 {
+  display: none;
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  color: var(--white);
+  text-align: center;
+}
+
+.icon-container {
+  display: flex;
+  width: 100%;
+}
+
+.icon-container div {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skills-label {
+  font-family: 'JosefinSans', sans-serif;
+  cursor: default;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--blue);
+  opacity: 0.7;
+}
+
+.planned-label {
+  color: var(--muted);
+}
+
+.mastered {
+  position: relative;
+  transition: filter 0.3s ease;
+}
+
+.mastered:hover {
+  filter: drop-shadow(0 0 10px var(--blue));
+}
+
+.opacity {
+  position: relative;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.opacity:hover {
+  opacity: 0.6;
+}
+
+.opacity::after {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'JosefinSans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.opacity:hover::after {
+  opacity: 1;
+}
+
+

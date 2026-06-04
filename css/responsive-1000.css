@@ -1,0 +1,174 @@
+﻿/* ===== MOBILE ===== */
+
+@media (max-width: 1300px) {
+  .flying-circle {
+    --circle-end: -40px;
+  }
+
+  .hero-text {
+    width: 500px;
+  }
+
+  .falling-icons {
+    right: 108%;
+  }
+
+  .hero-name {
+    width: 414px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .reference-card {
+    width: 350px;
+    height: 350px;
+  }
+
+  .ref-quote {
+    font-size: 16px;
+  }
+
+  .references {
+    padding: 150px 20px 5px;
+  }
+
+  .arrow-up-container {
+    padding: 0 250px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .project-panel.active {
+    gap: 50px;
+  }
+
+  .panel-screenshot {
+    width: 450px;
+    min-height: 270px;
+  }
+
+  .project-block h4 {
+    flex: 1;
+  }
+
+  .project-duration {
+    font-size: 16px;
+  }
+
+  .project-block h4 {
+    font-size: 24px;
+  }
+
+  .project-block p {
+    font-size: 16px;
+  }
+
+  .project-tabs {
+    margin-left: 0;
+  }
+
+  .project-panel.active {
+    padding: 50px 20px;
+  }
+
+}
+
+
+@media (max-width: 1150px) {
+  .hero-content {
+    padding: 0 30px;
+    max-height: 605px;
+  }
+
+  .hero-photo {
+    height: 605px;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .falling-icons {
+    right: 117%;
+  }
+
+  .flying-circle {
+    --circle-end: -55px;
+    animation-delay: 2.8s;
+  }
+
+  .background img {
+    animation: bgImageExpand 1.5s ease-out forwards;
+    animation-delay: 1.8s;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+  }
+
+  @keyframes bgImageExpand {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  .hero-content {
+    max-height: 500px;
+  }
+
+  .hero-photo {
+    height: 500px;
+  }
+
+  .background {
+    animation-delay: 5s;
+  }
+
+  .reference-card {
+    width: 320px;
+    height: 320px;
+  }
+
+  .ref-name {
+    font-size: 22px;
+  }
+
+  .arrow-up-container {
+    padding: 0px 300px;
+  }
+}
+
+
+
+@media (max-width: 1050px) {
+  .hero-name span {
+    animation: none;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+
+  .flying-circle,
+  .falling-icons,
+  .hero-text::after {
+    display: none;
+  }
+
+  .background img {
+    animation: bgImageExpand 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+  }
+
+  .background {
+    animation-delay: 1.2s;
+  }
+
+  .project-tabs {
+    gap: 0;
+  }
+}
+
