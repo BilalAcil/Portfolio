@@ -1,13 +1,13 @@
-﻿// ===== PROJECTS DATA =====
+// ===== PROJECTS DATA =====
 const projectsData = [
   {
-    tab: '1. PokÃ©dex',
+    tab: '1. Pokédex',
     techNames: ['HTML', 'JavaScript', 'CSS'],
     duration: { de: 'Dauer: 1 Woche', en: 'Duration: 1 week' },
     blocks: [
       {
-        heading: { de: 'Ãœber das Projekt', en: 'About the project' },
-        text: { de: 'Interaktives PokÃ©mon-Trainer-Register zur strukturierten und benutzerfreundlichen Darstellung von PokÃ©mon-Daten.', en: 'Interactive PokÃ©mon trainer registry designed for the structured and user-friendly presentation of PokÃ©mon data.' }
+        heading: { de: 'Über das Projekt', en: 'About the project' },
+        text: { de: 'Interaktives Pokémon-Trainer-Register zur strukturierten und benutzerfreundlichen Darstellung von Pokémon-Daten.', en: 'Interactive Pokémon trainer registry designed for the structured and user-friendly presentation of Pokémon data.' }
       },
       {
         heading: { de: 'Wie ich meinen Arbeitsprozess organisiert habe', en: 'How I organised my work process' },
@@ -17,7 +17,7 @@ const projectsData = [
       {
         heading: { de: 'Was ich gelernt habe', en: 'What I have learnt' },
         headingClass: 'h4-bottom',
-        text: { de: 'Ich habe meine FÃ¤higkeiten in den Bereichen Projektstruktur, wiederverwendbare Komponenten und das Schreiben von sauberem, wartbarem Code verbessert.', en: 'Improved my skills in project structure, reusable components, and writing clean, maintainable code.' }
+        text: { de: 'Ich habe meine Fähigkeiten in den Bereichen Projektstruktur, wiederverwendbare Komponenten und das Schreiben von sauberem, wartbarem Code verbessert.', en: 'Improved my skills in project structure, reusable components, and writing clean, maintainable code.' }
       }
     ],
     techs: ['HTML.png', 'JS.png', 'CSS.png'],
@@ -31,18 +31,18 @@ const projectsData = [
     duration: { de: 'Dauer: 5 Wochen', en: 'Duration: 5 weeks' },
     blocks: [
       {
-        heading: { de: 'Ãœber das Projekt', en: 'About the project' },
-        text: { de: 'Ein Projektmanagement-Tool zur Visualisierung von Aufgaben und Verantwortlichkeiten im Team mit Fokus auf Ã¼bersichtliche Statusverwaltung und klare Aufgabenverteilung.', en: 'A project management tool for visualizing tasks and responsibilities within the team, focusing on clear status management and task allocation.' }
+        heading: { de: 'Über das Projekt', en: 'About the project' },
+        text: { de: 'Ein Projektmanagement-Tool zur Visualisierung von Aufgaben und Verantwortlichkeiten im Team mit Fokus auf übersichtliche Statusverwaltung und klare Aufgabenverteilung.', en: 'A project management tool for visualizing tasks and responsibilities within the team, focusing on clear status management and task allocation.' }
       },
       {
         heading: { de: 'Wie ich meinen Arbeitsprozess organisiert habe', en: 'How I organised my work process' },
         headingClass: 'h4-bottom',
-        text: { de: 'Klare Aufgabenverteilung Ã¼ber Git-Branches und regelmÃ¤ÃŸige Abstimmungen im Team. Strukturierter Code mit Fokus auf Lesbarkeit und konsistente Namenskonventionen.', en: 'Clear task distribution via Git branches and regular team check-ins. Structured code with a focus on readability and consistent naming conventions.' }
+        text: { de: 'Klare Aufgabenverteilung über Git-Branches und regelmäßige Abstimmungen im Team. Strukturierter Code mit Fokus auf Lesbarkeit und konsistente Namenskonventionen.', en: 'Clear task distribution via Git branches and regular team check-ins. Structured code with a focus on readability and consistent naming conventions.' }
       },
       {
         heading: { de: 'Meine Gruppenarbeitserfahrung', en: 'My group work experience' },
         headingClass: 'h4-bottom',
-        text: { de: 'Team von 4 Personen. Gemeinsame Entwicklung einer Web-App mit geteilter Verantwortung fÃ¼r Frontend und Firebase-Anbindung â€“ mit enger Zusammenarbeit Ã¼ber Git.', en: 'Team of 4 people. Collaborative development of a web app with shared responsibility for the frontend and Firebase integration â€“ with close cooperation via Git.' }
+        text: { de: 'Team von 4 Personen. Gemeinsame Entwicklung einer Web-App mit geteilter Verantwortung für Frontend und Firebase-Anbindung – mit enger Zusammenarbeit über Git.', en: 'Team of 4 people. Collaborative development of a web app with shared responsibility for the frontend and Firebase integration – with close cooperation via Git.' }
       }
     ],
     techs: ['HTML.png', 'JS.png', 'CSS.png', 'Git.png', 'Firebase.png'],
@@ -56,18 +56,18 @@ const projectsData = [
     duration: { de: 'Dauer: 3 Wochen', en: 'Duration: 3 weeks' },
     blocks: [
       {
-        heading: { de: 'Ãœber das Projekt', en: 'About the project' },
-        text: { de: 'Ein Jump-and-Run-Spiel mit eigener Spiellogik, Animationen und Gegnern â€“ entwickelt mit JavaScript und objektorientierter Programmierung.', en: 'A jump-and-run game with custom game logic, animations and enemies â€” built with JavaScript and object-oriented programming.' }
+        heading: { de: 'Über das Projekt', en: 'About the project' },
+        text: { de: 'Ein Jump-and-Run-Spiel mit eigener Spiellogik, Animationen und Gegnern – entwickelt mit JavaScript und objektorientierter Programmierung.', en: 'A jump-and-run game with custom game logic, animations and enemies – built with JavaScript and object-oriented programming.' }
       },
       {
         heading: { de: 'Wie ich meinen Arbeitsprozess organisiert habe', en: 'How I organised my work process' },
         headingClass: 'h4-bottom',
-        text: { de: 'Klare Klassenstruktur mit getrennten Verantwortlichkeiten fÃ¼r Spieler, Gegner und Umgebung. Schrittweise Entwicklung von der Grundmechanik bis zur fertigen Spielerfahrung.', en: 'Clear class structure with separated responsibilities for player, enemies and environment. Step-by-step development from core mechanics to a complete game experience.' }
+        text: { de: 'Klare Klassenstruktur mit getrennten Verantwortlichkeiten für Spieler, Gegner und Umgebung. Schrittweise Entwicklung von der Grundmechanik bis zur fertigen Spielerfahrung.', en: 'Clear class structure with separated responsibilities for player, enemies and environment. Step-by-step development from core mechanics to a complete game experience.' }
       },
       {
         heading: { de: 'Meine Gruppenarbeitserfahrung', en: 'My group work experience' },
         headingClass: 'h4-bottom',
-        text: { de: 'Objektorientierung in der Praxis: Vererbung, Kapselung und wiederverwendbare Klassen. AuÃŸerdem ein tiefes VerstÃ¤ndnis fÃ¼r Game Loops, Kollisionserkennung und Animationssteuerung.', en: 'OOP in practice: inheritance, encapsulation and reusable classes. Plus a deep understanding of game loops, collision detection and animation control.' }
+        text: { de: 'Objektorientierung in der Praxis: Vererbung, Kapselung und wiederverwendbare Klassen. Außerdem ein tiefes Verständnis für Game Loops, Kollisionserkennung und Animationssteuerung.', en: 'OOP in practice: inheritance, encapsulation and reusable classes. Plus a deep understanding of game loops, collision detection and animation control.' }
       }
     ],
     techs: ['HTML.png', 'JS.png', 'CSS.png'],
@@ -80,8 +80,8 @@ const projectsData = [
     techNames: ['Angular', 'TypeScript', 'Supabase'],
     blocks: [
       {
-        heading: { de: 'Ãœber das Projekt', en: 'About the project' },
-        text: { de: 'Ein Business Chat Client fÃ¼r die geschÃ¤ftliche Teamkommunikation â€“ entwickelt im Team mit Angular, TypeScript und Firebase mit Fokus auf Echtzeit-Messaging und einer intuitiven BenutzeroberflÃ¤che.', en: 'A business chat client for professional team communication â€“ built with Angular, TypeScript and Firebase, focusing on real-time messaging and an intuitive user interface.' }
+        heading: { de: 'Über das Projekt', en: 'About the project' },
+        text: { de: 'Ein Business Chat Client für die geschäftliche Teamkommunikation – entwickelt im Team mit Angular, TypeScript und Firebase mit Fokus auf Echtzeit-Messaging und einer intuitiven Benutzeroberfläche.', en: 'A business chat client for professional team communication – built with Angular, TypeScript and Firebase, focusing on real-time messaging and an intuitive user interface.' }
       }
     ],
     techs: ['Angular.png', 'TS.png', 'Firebase.png'],
@@ -184,7 +184,7 @@ function renderProjects() {
 
 renderProjects();
 
-// Restore saved language â€” must run after renderProjects()
+// Restore saved language – must run after renderProjects()
 const savedLang = localStorage.getItem('lang') || 'en';
 setLang(savedLang);
 
