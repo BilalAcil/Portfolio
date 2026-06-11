@@ -10,6 +10,10 @@ function setLang(lang) {
     el.innerHTML = el.getAttribute(`data-${lang}`);
   });
 
+  document.querySelectorAll('[data-src-de][data-src-en]').forEach(el => {
+    el.src = el.getAttribute(`data-src-${lang}`);
+  });
+
   btnDe.classList.toggle('active', lang === 'de');
   btnEn.classList.toggle('active', lang === 'en');
 

@@ -44,12 +44,22 @@ h3 {
   transition: opacity 0.15s ease;
 }
 
+.location-text {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+
 .location-text span {
   font-family: 'JosefinSans', sans-serif;
   color: var(--white);
   font-weight: bold;
   font-size: 30px;
   cursor: default;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .location-text span::after {
@@ -105,4 +115,3 @@ h3 {
 .talk-button-container img:hover {
   background: #ffffff2b;
 }
-
