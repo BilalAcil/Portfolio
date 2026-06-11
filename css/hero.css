@@ -550,7 +550,6 @@
 .social-icons a {
   width: 30px;
   height: 30px;
-  cursor: default;
 }
 
 .social-icons a:hover {
@@ -667,5 +666,3 @@
   display: block;
   transition: none;
 }
-
-
