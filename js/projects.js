@@ -21,7 +21,7 @@ const projectsData = [
       }
     ],
     techs: ['HTML.png', 'JS.png', 'CSS.png'],
-    img: 'Pokedex.png',
+    img: 'Pokedex.webp',
     live: 'https://pokedex.bilal-acil.de',
     github: 'https://github.com/BilalAcil/pokedex'
   },

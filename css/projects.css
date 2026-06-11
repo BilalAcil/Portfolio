@@ -223,7 +223,6 @@
   text-decoration: none;
   letter-spacing: 1px;
   transition: background 0.3s ease;
-  cursor: default;
 }
 
 .btn-live:hover {
@@ -240,7 +239,6 @@
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  cursor: default;
 }
 
 .btn-gh:hover {
@@ -258,4 +256,3 @@
     opacity: 0;
   }
 }
-
