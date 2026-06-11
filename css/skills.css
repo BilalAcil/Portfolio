@@ -112,7 +112,7 @@
 .skills-label {
   font-family: 'JosefinSans', sans-serif;
   cursor: default;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 3px;
   color: var(--blue);
   opacity: 0.7;
@@ -158,5 +158,3 @@
 .opacity:hover::after {
   opacity: 1;
 }
-
-
