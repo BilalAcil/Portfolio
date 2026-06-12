@@ -213,7 +213,7 @@
     width: calc(100% - 80px);
     margin-left: 80px;
     font-family: 'JosefinSans', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--white);
   }
 
@@ -453,11 +453,11 @@
   }
 
   .footer-legal {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .footer-copy {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .footer-name {

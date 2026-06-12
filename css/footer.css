@@ -62,7 +62,7 @@ footer {
 
 .footer-name {
   font-family: 'Anta', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--nav-text);
   letter-spacing: 1px;
   opacity: 0.8;
@@ -71,7 +71,7 @@ footer {
 
 .footer-role {
   font-family: 'JosefinSans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--white);
   line-height: 120%;
