@@ -32,6 +32,14 @@
     display: none;
   }
 
+  .arrow-up-1 {
+    display: none;
+  }
+
+  .contact-header {
+    justify-content: center;
+  }
+
   .arrow-up-mobile-container {
     display: flex;
     justify-content: center;
@@ -420,8 +428,8 @@
   }
 
   .panel-screenshot {
-    width: 350px;
-    min-height: 210px;
+    width: 340px;
+    min-height: 204px;
   }
 
   .footer-container {
@@ -461,6 +469,10 @@
 
   .hero-content {
     padding: 96px 10px 0px;
+  }
+
+  .project-tab {
+    border-radius: 20px 20px 0 0;
   }
 }
 
@@ -555,10 +567,31 @@
     height: 416px;
   }
 
+  .project-tab {
+    width: 90px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .project-tab {
+    border-radius: 15px 15px 0 0;
+  }
 }
 
 @media (max-width: 350px) {
   .contact {
     padding: 60px 10px 120px;
+  }
+
+  .tab-short {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 110%;
+  }
+
+  .project-tab {
+    height: auto;
+    padding: 8px 10px;
   }
 }

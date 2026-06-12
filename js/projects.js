@@ -101,7 +101,7 @@ function renderProjects() {
     const btn = document.createElement('button');
     btn.className = 'project-tab' + (i === 0 ? ' active' : '');
     btn.dataset.tab = i;
-    btn.innerHTML = `<span class="tab-full">${project.tab}</span><span class="tab-short">${i + 1}. Project</span>`;
+    btn.innerHTML = `<span class="tab-full">${project.tab}</span><span class="tab-short"><span class="tab-short-num">${i + 1}.</span> <span class="tab-short-label">Project</span></span>`;
     tabsEl.appendChild(btn);
 
     // Blocks HTML
