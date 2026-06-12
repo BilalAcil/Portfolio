@@ -580,6 +580,65 @@
   .project-tab {
     border-radius: 15px 15px 0 0;
   }
+
+  .hero-content {
+    padding: 60px 10px 0px;
+  }
+
+  .mobile-menu {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ellipse-div {
+    width: 300px;
+    max-width: 100%;
+    height: 357px;
+    gap: 10px;
+  }
+
+  .mobile-nav-links {
+    gap: 20px;
+  }
+
+  .mobile-nav-links a {
+    font-size: 20px;
+  }
+
+  .hero-photo {
+    width: 250px;
+    height: 298px;
+  }
+
+  .hero-name {
+    font-size: 54px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .panel-screenshot {
+    width: min(300px, 100vw);
+    min-height: 180px;
+  }
+
+  .panel-buttons {
+    gap: 10px;
+  }
+
+  .references {
+    padding: 60px 10px 5px;
+  }
+
+  .references-subtitle {
+    font-size: 17px;
+  }
+
+  .privacy-heading {
+    font-size: clamp(26px, 6vw, 54px);
+  }
 }
 
 @media (max-width: 350px) {

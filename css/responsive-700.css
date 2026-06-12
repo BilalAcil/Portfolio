@@ -45,6 +45,7 @@
     align-items: center;
     padding: 96px 24px 0px;
     height: auto;
+    min-height: 100dvh;
     max-height: none;
     margin-top: 0;
     gap: 28px;
@@ -68,7 +69,7 @@
 
   /* Text-Bereich */
   .hero-text {
-    flex: none;
+    flex: 1 0 auto;
     width: 100%;
     max-width: none;
     align-items: center;
@@ -76,9 +77,18 @@
 
   .hero-logo {
     height: auto;
+    flex: 1;
     gap: 40px;
     justify-content: flex-start;
     width: 100%;
+  }
+
+  /* Scroll-Indicator zentriert im Restplatz bis zur 100dvh-Unterkante */
+  .scroll-indicator-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Social-Icons: absolute â†’ static, horizontal */

@@ -489,6 +489,10 @@
 }
 
 /* Scroll indicator */
+.scroll-indicator-container {
+  display: contents;
+}
+
 .scroll-indicator {
   animation: bounce 2s infinite;
   width: 38px;
