@@ -1,25 +1,22 @@
-﻿// ===== PRIVACY OVERLAY =====
-const privacyOverlay = document.getElementById('privacy-overlay');
+﻿// ===== PRIVACY POLICY =====
+const privacyPolicy = document.getElementById('privacy-policy');
 const privacyTrigger = document.getElementById('privacy-trigger');
-const privacyClose = document.getElementById('privacy-close');
+const privacyBack = document.getElementById('privacy-back');
+
+function closePrivacy() {
+  privacyPolicy.classList.remove('active');
+  mainSections.forEach(s => s.classList.remove('d-none'));
+  springScroll(getScrollTarget('#contact'));
+}
 
 privacyTrigger.addEventListener('click', e => {
   e.preventDefault();
-  privacyOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  mainSections.forEach(s => s.classList.add('d-none'));
+  privacyPolicy.classList.add('active');
+  requestAnimationFrame(() => springScroll(privacyPolicy.offsetTop));
 });
 
-privacyClose.addEventListener('click', () => {
-  privacyOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-});
-
-privacyOverlay.addEventListener('click', e => {
-  if (e.target === privacyOverlay) {
-    privacyOverlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-});
+privacyBack.addEventListener('click', closePrivacy);
 
 // ===== FORM VALIDATION =====
 const form = document.getElementById('contact-form');

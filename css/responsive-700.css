@@ -50,11 +50,13 @@
     gap: 28px;
   }
 
-  .legal-back {
+  .legal-back,
+  .privacy-back {
     display: flex;
   }
 
-  .legal-notice {
+  .legal-notice,
+  .privacy-policy {
     padding: 80px 40px;
   }
 
@@ -179,11 +181,13 @@
     z-index: 10;
   }
 
-  body:has(#legal-notice.active) .hero {
+  body:has(#legal-notice.active) .hero,
+  body:has(#privacy-policy.active) .hero {
     display: none;
   }
 
-  body:has(#legal-notice.active) .arrow-up-mobile-container {
+  body:has(#legal-notice.active) .arrow-up-mobile-container,
+  body:has(#privacy-policy.active) .arrow-up-mobile-container {
     display: none;
   }
 
@@ -444,11 +448,13 @@
     gap: 40px;
   }
 
-  .legal-heading {
+  .legal-heading,
+  .privacy-heading {
     margin-bottom: 40px;
   }
 
-  .legal-back {
+  .legal-back,
+  .privacy-back {
     display: block;
   }
 

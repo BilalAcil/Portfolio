@@ -9,6 +9,10 @@
 
 document.getElementById('nav-logo').addEventListener('click', () => {
   if (legalNotice.classList.contains('active')) closeLegal();
+  if (privacyPolicy.classList.contains('active')) {
+    privacyPolicy.classList.remove('active');
+    mainSections.forEach(s => s.classList.remove('d-none'));
+  }
   springScroll(0);
 });
 
@@ -23,6 +27,7 @@ footerLegal.addEventListener('click', e => {
   if (legalNotice.classList.contains('active')) {
     closeLegal();
   } else {
+    privacyPolicy.classList.remove('active');
     mainSections.forEach(s => s.classList.add('d-none'));
     legalNotice.classList.add('active');
     setLang(currentLang());

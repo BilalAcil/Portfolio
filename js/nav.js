@@ -16,6 +16,10 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     if (legalNotice.classList.contains('active')) closeLegal();
+    if (privacyPolicy.classList.contains('active')) {
+      privacyPolicy.classList.remove('active');
+      mainSections.forEach(s => s.classList.remove('d-none'));
+    }
     const hash = link.getAttribute('href');
     let y = getScrollTarget(hash);
     if (window.innerWidth > 1000 && (hash === '#skills' || hash === '#projects')) {

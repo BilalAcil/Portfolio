@@ -44,6 +44,10 @@ document.querySelectorAll('.mobile-nav-links a').forEach(link => {
       legalNotice.classList.remove('active');
       mainSections.forEach(s => s.classList.remove('d-none'));
     }
+    if (privacyPolicy.classList.contains('active')) {
+      privacyPolicy.classList.remove('active');
+      mainSections.forEach(s => s.classList.remove('d-none'));
+    }
     const y = getScrollTarget(link.getAttribute('href'));
     if (y) springScroll(y);
   });
