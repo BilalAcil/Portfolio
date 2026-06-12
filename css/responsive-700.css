@@ -181,11 +181,6 @@
     z-index: 10;
   }
 
-  body:has(#legal-notice.active) .hero,
-  body:has(#privacy-policy.active) .hero {
-    display: none;
-  }
-
   body:has(#legal-notice.active) .arrow-up-mobile-container,
   body:has(#privacy-policy.active) .arrow-up-mobile-container {
     display: none;

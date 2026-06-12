@@ -69,3 +69,8 @@ body {
 #p-references, #p-contact, #p-legal, #p-privacy, #p-footer {
   display: contents;
 }
+
+body:has(#legal-notice.active) .hero,
+body:has(#privacy-policy.active) .hero {
+  display: none;
+}
