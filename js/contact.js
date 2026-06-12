@@ -34,14 +34,16 @@ const validators = {
 
 const errorTexts = {
   de: {
-    name: 'Bitte gib deinen Namen ein (mind. 2 Zeichen).',
-    email: 'Bitte gib eine gÃ¼ltige E-Mail-Adresse ein.',
-    message: 'Deine Nachricht muss mind. 10 Zeichen lang sein.',
+    name: 'Mind. 2 Zeichen lang.',
+    email: 'Ungültige E-Mail-Adresse.',
+    message: 'Mind. 10 Zeichen lang.',
+    privacy: 'Bitte Datenschutzerklärung akzeptieren.',
   },
   en: {
-    name: 'Please enter your name (at least 2 characters).',
-    email: 'Please enter a valid email address.',
-    message: 'Your message must be at least 10 characters long.',
+    name: 'Min. 2 characters long.',
+    email: 'Invalid email address.',
+    message: 'Min. 10 characters long.',
+    privacy: 'Please accept the privacy policy.',
   }
 };
 
@@ -76,15 +78,33 @@ function validateField(field) {
   return valid;
 }
 
-function isFormValid() {
+function areFieldsValid() {
   return validators.name(form.name.value)
     && validators.email(form.email.value)
-    && validators.message(form.message.value)
-    && privacyCheckbox.checked;
+    && validators.message(form.message.value);
+}
+
+function showPrivacyError() {
+  const box = privacyCheckbox.closest('.form-checkbox');
+  let err = box.querySelector('.field-error');
+  if (!err) {
+    err = document.createElement('span');
+    err.className = 'field-error';
+    box.appendChild(err);
+  }
+  err.textContent = errorTexts[currentLang()].privacy;
+  privacyCheckbox.classList.add('input-error');
+}
+
+function clearPrivacyError() {
+  const box = privacyCheckbox.closest('.form-checkbox');
+  const err = box.querySelector('.field-error');
+  if (err) err.textContent = '';
+  privacyCheckbox.classList.remove('input-error');
 }
 
 function updateSendBtn() {
-  const active = isFormValid();
+  const active = areFieldsValid();
   sendBtn.disabled = !active;
   sendBtn.classList.toggle('btn-disabled', !active);
 }
@@ -99,18 +119,20 @@ updateSendBtn();
 });
 
 privacyCheckbox.addEventListener('change', () => {
-  privacyCheckbox.classList.toggle('input-error', !privacyCheckbox.checked);
-  updateSendBtn();
+  if (privacyCheckbox.checked) clearPrivacyError();
 });
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  if (!isFormValid()) {
-    if (!privacyCheckbox.checked) privacyCheckbox.classList.add('input-error');
+  if (!areFieldsValid()) {
     updateSendBtn();
     return;
   }
-  privacyCheckbox.classList.remove('input-error');
+  if (!privacyCheckbox.checked) {
+    showPrivacyError();
+    return;
+  }
+  clearPrivacyError();
 
   if (!window.emailjs) {
     const errMsg = currentLang() === 'de'
@@ -135,7 +157,7 @@ form.addEventListener('submit', e => {
     .then(() => {
       emailjs.send('service_ijq716l', 'template_9fbnu2q', {
         to_email: form.email.value,
-        to_name:  form.name.value,
+        to_name: form.name.value,
       }, '5tl1HsbrJ1MBW_ume');
 
       const lang = currentLang();

@@ -39,7 +39,6 @@
   }
 
   .contact-form {
-    gap: 0;
     z-index: 9999;
   }
 
@@ -95,6 +94,14 @@
 
   .contact-intro-wrapper {
     width: 60%;
+  }
+
+  .form-group {
+    padding-bottom: 46px;
+  }
+
+  .field-error {
+    height: 36px;
   }
 
 }
@@ -497,7 +504,7 @@
   }
 
   .contact {
-    padding: 60px 10px 60px;
+    padding: 60px 10px 100px;
   }
 
   .form-row {
@@ -510,7 +517,7 @@
   }
 
   .form-footer {
-    gap: 20px;
+    gap: 30px;
     flex-direction: column;
   }
 
@@ -528,6 +535,14 @@
 
   .legal-notice {
     padding: 80px 10px;
+  }
+
+  .contact-form {
+    gap: 0;
+  }
+
+  .form-checkbox label {
+    margin-top: 0;
   }
 
 }
@@ -552,5 +567,11 @@
 
   .privacy-content {
     padding: 48px 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .contact {
+    padding: 60px 10px 120px;
   }
 }

@@ -86,10 +86,6 @@ footer {
   gap: 16px;
 }
 
-.footer-right a {
-  cursor: default;
-}
-
 .footer-icon {
   width: 30px;
   height: 30px;
@@ -116,5 +112,3 @@ footer {
   width: 30px;
   height: 30px;
 }
-
-
