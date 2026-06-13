@@ -20,8 +20,9 @@ privacyBack.addEventListener('click', closePrivacy);
 
 // ===== FORM VALIDATION =====
 const form = document.getElementById('contact-form');
-const sendBtn = form.querySelector('.btn-send');
-const privacyCheckbox = document.getElementById('privacy');
+const originalFormHTML = form.innerHTML;
+let sendBtn = form.querySelector('.btn-send');
+let privacyCheckbox = document.getElementById('privacy');
 
 const validators = {
   name: v => v.trim().length >= 2,
@@ -106,18 +107,30 @@ function updateSendBtn() {
   sendBtn.classList.toggle('btn-disabled', !active);
 }
 
-updateSendBtn();
+function initFormFields() {
+  sendBtn = form.querySelector('.btn-send');
+  privacyCheckbox = document.getElementById('privacy');
+  updateSendBtn();
 
-['name', 'email', 'message'].forEach(name => {
-  form[name].addEventListener('blur', () => {
-    validateField(form[name]);
-    updateSendBtn();
+  ['name', 'email', 'message'].forEach(name => {
+    form[name].addEventListener('blur', () => {
+      validateField(form[name]);
+      updateSendBtn();
+    });
   });
-});
 
-privacyCheckbox.addEventListener('change', () => {
-  if (privacyCheckbox.checked) clearPrivacyError();
-});
+  privacyCheckbox.addEventListener('change', () => {
+    if (privacyCheckbox.checked) clearPrivacyError();
+  });
+}
+
+function restoreForm() {
+  form.innerHTML = originalFormHTML;
+  setLang(currentLang());
+  initFormFields();
+}
+
+initFormFields();
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -162,6 +175,7 @@ form.addEventListener('submit', e => {
         ? 'Danke! Deine Nachricht wurde erfolgreich gesendet.'
         : 'Thank you! Your message has been sent successfully.';
       form.innerHTML = `<div class="form-success">${successMsg}</div>`;
+      setTimeout(restoreForm, 5000);
     })
     .catch(error => {
       console.error('EmailJS send error:', error);

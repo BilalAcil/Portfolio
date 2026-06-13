@@ -199,7 +199,7 @@
 
   .why-me-container {
     height: auto;
-    margin-top: 80px;
+    margin: 20px 0 60px;
     gap: 32px;
     justify-content: flex-start;
   }
@@ -227,7 +227,7 @@
 
   .my-skills {
     height: auto;
-    margin: 80px 0 0 0;
+    margin: 50px 0 40px;
   }
 
   .my-skills-container {
@@ -276,7 +276,7 @@
   }
 
   .projects-container {
-    margin-top: 80px;
+    margin-top: 0px;
   }
 
   .projects-container h3 {
@@ -396,7 +396,7 @@
   }
 
   .references {
-    padding: 80px 20px 5px;
+    padding: 80px 20px 45px;
   }
 
   .references-cards {
@@ -445,7 +445,7 @@
   }
 
   .contact {
-    padding: 80px 20px;
+    padding: 10px 20px;
   }
 
   .contact-container {
