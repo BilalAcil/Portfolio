@@ -20,7 +20,9 @@
   <link rel="stylesheet" href="css/responsive-1000.css">
   <link rel="stylesheet" href="css/responsive-700.css">
   <link rel="stylesheet" href="css/responsive-500.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -40,16 +42,16 @@
   <script>
     (async () => {
       const partials = [
-        ['p-hero',       'partials/hero.html'],
-        ['p-navbar',     'partials/navbar.html'],
-        ['p-why-me',     'partials/why-me.html'],
-        ['p-skills',     'partials/skills.html'],
-        ['p-projects',   'partials/projects.html'],
+        ['p-hero', 'partials/hero.html'],
+        ['p-navbar', 'partials/navbar.html'],
+        ['p-why-me', 'partials/why-me.html'],
+        ['p-skills', 'partials/skills.html'],
+        ['p-projects', 'partials/projects.html'],
         ['p-references', 'partials/references.html'],
-        ['p-contact',    'partials/contact.html'],
-        ['p-legal',      'partials/legal.html'],
-        ['p-privacy',    'partials/privacy.html'],
-        ['p-footer',     'partials/footer.html'],
+        ['p-contact', 'partials/contact.html'],
+        ['p-legal', 'partials/legal.html'],
+        ['p-privacy', 'partials/privacy.html'],
+        ['p-footer', 'partials/footer.html'],
       ];
       await Promise.all(partials.map(async ([id, file]) => {
         const res = await fetch(file);

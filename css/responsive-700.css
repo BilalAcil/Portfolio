@@ -43,7 +43,7 @@
   .hero-content {
     flex-direction: column;
     align-items: center;
-    padding: 96px 24px 0px;
+    padding: 96px 24px 90px;
     height: auto;
     min-height: 100dvh;
     max-height: none;
@@ -199,7 +199,7 @@
 
   .why-me-container {
     height: auto;
-    margin: 20px 0 60px;
+    margin: 10px 0 60px;
     gap: 32px;
     justify-content: flex-start;
   }
@@ -227,7 +227,7 @@
 
   .my-skills {
     height: auto;
-    margin: 50px 0 40px;
+    margin: 50px 0 110px;
   }
 
   .my-skills-container {
@@ -445,7 +445,7 @@
   }
 
   .contact {
-    padding: 10px 20px;
+    padding: 10px 20px 110px;
   }
 
   .contact-container {
@@ -476,11 +476,6 @@
 @media (max-width: 950px) {
   .footer-container {
     padding: 0px 20px;
-  }
-
-  .teamplayer-header {
-    gap: 0;
-    flex-direction: column;
   }
 
   .references-container {

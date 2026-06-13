@@ -170,4 +170,9 @@
   .project-tabs {
     gap: 0;
   }
+
+  .teamplayer-header {
+    gap: 0;
+    flex-direction: column;
+  }
 }
