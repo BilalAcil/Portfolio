@@ -74,21 +74,6 @@ const projectsData = [
     img: 'El-Pollo-Loco.png',
     live: 'https://elpolloloco.bilal-acil.de',
     github: 'https://github.com/BilalAcil/El-Pollo-Loco'
-  },
-  {
-    tab: '4. DA Bubble',
-    tabShort: { de: '4. Laufendes Projekt', en: '4. Ongoing Project' },
-    techNames: ['Angular', 'TypeScript', 'Supabase'],
-    blocks: [
-      {
-        heading: { de: 'Über das Projekt', en: 'About the project' },
-        text: { de: 'An diesem Projekt arbeite ich aktuell. Mit Fokus auf sauberer Planung, wartbarem Code und durchdachter Umsetzung lerne ich dabei kontinuierlich neue Technologien und verbessere meine Fähigkeiten Schritt für Schritt.', en: 'This is a project I am currently working on. With a focus on clean planning, maintainable code and a well-thought-out execution, I keep learning new technologies and continually improve my skills.' }
-      }
-    ],
-    techs: ['Angular.png', 'TS.png', 'Firebase.png'],
-    img: null,
-    live: null,
-    github: null
   }
 ];
 

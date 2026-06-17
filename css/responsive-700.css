@@ -300,7 +300,6 @@
   .project-tab {
     flex-shrink: 0;
     height: 68px;
-    font-size: 24px;
   }
 
   .project-panel.active {
