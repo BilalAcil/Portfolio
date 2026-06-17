@@ -61,6 +61,10 @@
     -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 50%);
     mask-image: linear-gradient(to bottom, black 50%, transparent 90%);
   }
+
+  .profile-img-1 {
+    display: block;
+  }
 }
 
 .hero-content {
@@ -163,9 +167,15 @@
   display: block;
 }
 
-/* .profile-img-1 {
+.profile-img-1 {
   display: none;
-} */
+}
+
+@media (min-height: 1250px) and (min-width: 1001px) {
+  .profile-img-1 {
+    display: block;
+  }
+}
 
 .logo-container {
   position: relative;
