@@ -191,12 +191,6 @@
     z-index: 10;
   }
 
-  body:has(#legal-notice.active) .arrow-up-mobile-container,
-  body:has(#privacy-policy.active) .arrow-up-mobile-container {
-    display: none;
-  }
-
-
   .why-me-container {
     height: auto;
     margin: 10px 0 60px;
@@ -305,7 +299,6 @@
 
   .project-tab {
     flex-shrink: 0;
-    width: 206px;
     height: 68px;
     font-size: 24px;
   }
@@ -460,7 +453,9 @@
 
   .legal-back,
   .privacy-back {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .footer-container {
@@ -495,7 +490,6 @@
   }
 
   .project-tab {
-    width: 150px;
     height: 60px;
   }
 }
@@ -521,5 +515,9 @@
 
   .my-skills-left img {
     height: 70px;
+  }
+
+  .project-tab {
+    padding: 0 15px;
   }
 }

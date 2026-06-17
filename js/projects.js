@@ -77,11 +77,12 @@ const projectsData = [
   },
   {
     tab: '4. DA Bubble',
+    tabShort: { de: '4. Laufendes Projekt', en: '4. Ongoing Project' },
     techNames: ['Angular', 'TypeScript', 'Supabase'],
     blocks: [
       {
         heading: { de: 'Über das Projekt', en: 'About the project' },
-        text: { de: 'Ein Business Chat Client für die geschäftliche Teamkommunikation – entwickelt im Team mit Angular, TypeScript und Firebase mit Fokus auf Echtzeit-Messaging und einer intuitiven Benutzeroberfläche.', en: 'A business chat client for professional team communication – built with Angular, TypeScript and Firebase, focusing on real-time messaging and an intuitive user interface.' }
+        text: { de: 'An diesem Projekt arbeite ich aktuell. Mit Fokus auf sauberer Planung, wartbarem Code und durchdachter Umsetzung lerne ich dabei kontinuierlich neue Technologien und verbessere meine Fähigkeiten Schritt für Schritt.', en: 'This is a project I am currently working on. With a focus on clean planning, maintainable code and a well-thought-out execution, I keep learning new technologies and continually improve my skills.' }
       }
     ],
     techs: ['Angular.png', 'TS.png', 'Firebase.png'],
@@ -101,7 +102,13 @@ function renderProjects() {
     const btn = document.createElement('button');
     btn.className = 'project-tab' + (i === 0 ? ' active' : '');
     btn.dataset.tab = i;
-    btn.innerHTML = `<span class="tab-full">${project.tab}</span><span class="tab-short"><span class="tab-short-num">${i + 1}.</span> <span class="tab-short-label" data-de="Projekt" data-en="Project">Project</span></span>`;
+    const tabFullHTML = project.tabShort
+      ? `<span data-de="${project.tabShort.de}" data-en="${project.tabShort.en}">${project.tabShort.en}</span>`
+      : project.tab;
+    const tabShortHTML = project.tabShort
+      ? `<span class="tab-short-label" data-de="${project.tabShort.de}" data-en="${project.tabShort.en}">${project.tabShort.en}</span>`
+      : `<span class="tab-short-num">${i + 1}.</span> <span class="tab-short-label" data-de="Projekt" data-en="Project">Project</span>`;
+    btn.innerHTML = `<span class="tab-full">${tabFullHTML}</span><span class="tab-short">${tabShortHTML}</span>`;
     tabsEl.appendChild(btn);
 
     // Blocks HTML
@@ -130,8 +137,11 @@ function renderProjects() {
 
     // Mobile header HTML (name + tech text + duration)
     const techText = project.techNames ? project.techNames.join(', ') : '';
+    const mobileNameHTML = project.tabShort
+      ? `data-de="${project.tabShort.de}" data-en="${project.tabShort.en}">${project.tabShort.en}`
+      : `>${project.tab.replace(/^\d+\.\s*/, '')}`;
     const mobileHeaderHTML = `<div class="panel-header-mobile">
-      <h3 class="panel-project-name">${project.tab.replace(/^\d+\.\s*/, '')}</h3>
+      <h3 class="panel-project-name" ${mobileNameHTML}</h3>
       ${techText ? `<span data-de="Technologien: ${techText}" data-en="Technologies: ${techText}"></span>` : ''}
       ${project.duration ? `<span data-de="${project.duration.de}" data-en="${project.duration.en}"></span>` : ''}
     </div>`;

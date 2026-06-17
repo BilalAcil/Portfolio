@@ -1,25 +1,37 @@
-﻿// ===== LEGAL NOTICE ELEMENTS =====
-const legalNotice = document.getElementById('legal-notice');
-const legalBack = document.getElementById('legal-back');
-const footerLegal = document.querySelector('.footer-legal');
-const mainSections = ['why-me', 'my-skills', 'my-projects', 'references', 'contact']
-  .map(cls => document.querySelector('.' + cls));
-
-// ===== SCROLL ANCHORS =====
+﻿// ===== SCROLL ANCHORS =====
 function getScrollTarget(hash) {
   const el = document.querySelector(hash);
   if (!el) return 0;
   return el.getBoundingClientRect().top + window.scrollY;
 }
 
+// Logo -> nach oben scrollen
+const navLogo = document.getElementById('nav-logo');
+if (navLogo) navLogo.addEventListener('click', () => springScroll(0));
+
+// Direkteinstieg via Hash (z.B. Klick aus Impressum/Datenschutz):
+// genauso sanft scrollen wie ein normaler Nav-Klick
+function scrollToHash() {
+  const hash = location.hash;
+  if (!hash) return;
+  let y = getScrollTarget(hash);
+  if (window.innerWidth > 1000 && (hash === '#skills' || hash === '#projects')) y -= 104;
+  if (y) springScroll(y);
+}
+
+if (location.hash) {
+  // nav.js läuft erst nach dem Einfügen der Partials – das load-Event
+  // kann da schon vorbei sein, daher beide Fälle abdecken.
+  if (document.readyState === 'complete') {
+    requestAnimationFrame(scrollToHash);
+  } else {
+    window.addEventListener('load', scrollToHash);
+  }
+}
+
 document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    if (legalNotice.classList.contains('active')) closeLegal();
-    if (privacyPolicy.classList.contains('active')) {
-      privacyPolicy.classList.remove('active');
-      mainSections.forEach(s => s.classList.remove('d-none'));
-    }
     const hash = link.getAttribute('href');
     let y = getScrollTarget(hash);
     if (window.innerWidth > 1000 && (hash === '#skills' || hash === '#projects')) {

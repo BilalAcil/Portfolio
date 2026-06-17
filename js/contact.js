@@ -1,24 +1,4 @@
-﻿// ===== PRIVACY POLICY =====
-const privacyPolicy = document.getElementById('privacy-policy');
-const privacyTrigger = document.getElementById('privacy-trigger');
-const privacyBack = document.getElementById('privacy-back');
-
-function closePrivacy() {
-  privacyPolicy.classList.remove('active');
-  mainSections.forEach(s => s.classList.remove('d-none'));
-  springScroll(getScrollTarget('#contact'));
-}
-
-privacyTrigger.addEventListener('click', e => {
-  e.preventDefault();
-  mainSections.forEach(s => s.classList.add('d-none'));
-  privacyPolicy.classList.add('active');
-  requestAnimationFrame(() => springScroll(privacyPolicy.offsetTop));
-});
-
-privacyBack.addEventListener('click', closePrivacy);
-
-// ===== FORM VALIDATION =====
+﻿// ===== FORM VALIDATION =====
 const form = document.getElementById('contact-form');
 const originalFormHTML = form.innerHTML;
 let sendBtn = form.querySelector('.btn-send');

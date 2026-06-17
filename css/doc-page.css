@@ -1,0 +1,20 @@
+/* ===== STANDALONE DOC PAGES (Legal Notice / Privacy Policy) ===== */
+
+/* Navbar-Logo als Link */
+.navbar a.nav-logo {
+  text-decoration: none;
+}
+
+/* Inhalt beginnt direkt unter der Navbar */
+.doc-main {
+  width: 100%;
+}
+
+/* Mobiler Hoch-Pfeil: sichtbar sobald die Navbar zum Burger wird (<=700px) */
+@media (max-width: 700px) {
+  .arrow-up-mobile-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 80px;
+  }
+}
