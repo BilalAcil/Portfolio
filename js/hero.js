@@ -76,3 +76,41 @@ new MutationObserver(() => {
 
 type();
 
+// ===== MARIO-PILZ: HERO-CONTENT WAECHST AUF GROSSEN MONITOREN =====
+(function () {
+  const hero = document.querySelector('.hero');
+  const content = document.querySelector('.hero-content');
+  if (!hero || !content) return;
+
+  const TOP_GAP = 40;   // etwas Luft nach oben lassen
+  const MAX_SCALE = 1.5; // nicht uebertreiben
+
+  function computeScale() {
+    // Natuerliche (unskalierte) Masse messen – offsetSize ignoriert transform
+    const natH = content.offsetHeight;
+    const natW = content.offsetWidth;
+    if (!natH || !natW) return 1;
+
+    const availH = hero.clientHeight - TOP_GAP;
+    const scaleH = availH / natH;
+    const scaleW = window.innerWidth / natW; // nicht breiter als das Fenster
+
+    let scale = Math.min(scaleH, scaleW, MAX_SCALE);
+    return scale > 1.02 ? scale : 1; // nur wachsen, wenn sich's lohnt
+  }
+
+  function applyScale() {
+    content.style.setProperty('--hero-scale', computeScale().toFixed(3));
+  }
+
+  // Erst nach der Flying-Circle-Animation (2.7s Delay + 2.4s Dauer = 5.1s)
+  setTimeout(applyScale, 5100);
+
+  // Bei Groessenaenderung neu berechnen (debounced)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyScale, 150);
+  });
+})();
+
