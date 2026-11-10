@@ -74,6 +74,31 @@ const projectsData = [
     img: 'El-Pollo-Loco.png',
     live: 'https://elpolloloco.bilal-acil.de',
     github: 'https://github.com/BilalAcil/El-Pollo-Loco'
+  },
+  {
+    tab: '4. PollApp',
+    techNames: ['Angular', 'TypeScript', 'SCSS', 'Supabase'],
+    duration: { de: 'Dauer: 4 Wochen', en: 'Duration: 4 weeks' },
+    blocks: [
+      {
+        heading: { de: 'Über das Projekt', en: 'About the project' },
+        text: { de: 'Eine Umfrage-App ohne Login: Umfragen erstellen, abstimmen und die Ergebnisse live verfolgen – mit Supabase Realtime, Mehrfachauswahl und mehreren Fragen pro Umfrage.', en: 'A survey app without login: create surveys, vote and follow the results live – with Supabase Realtime, multiple-choice answers and several questions per survey.' }
+      },
+      {
+        heading: { de: 'Wie ich meinen Arbeitsprozess organisiert habe', en: 'How I organised my work process' },
+        headingClass: 'h4-bottom',
+        text: { de: 'Angular mit Standalone-Komponenten und Signals, klare Coding-Konventionen und ein eigenes Design-System. Das Backend mit Postgres und Row Level Security habe ich selbst aufgesetzt.', en: 'Angular with standalone components and signals, clear coding conventions and a custom design system. I set up the backend with Postgres and Row Level Security myself.' }
+      },
+      {
+        heading: { de: 'Was ich gelernt habe', en: 'What I have learnt' },
+        headingClass: 'h4-bottom',
+        text: { de: 'Ich habe die Angular-Architektur, Echtzeit-Daten mit Supabase, Datenbankdesign und Datensicherheit mit RLS in einem eigenständigen Projekt vertieft.', en: 'I deepened my knowledge of Angular architecture, real-time data with Supabase, database design and data security with RLS in a solo project.' }
+      }
+    ],
+    techs: ['Angular.png', 'TS.png', 'Supabase.png'],
+    img: 'PollApp.png',
+    live: 'https://pollapp.bilal-acil.de',
+    github: 'https://github.com/BilalAcil/PollApp'
   }
 ];
 
