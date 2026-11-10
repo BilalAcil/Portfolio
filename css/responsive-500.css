@@ -75,6 +75,17 @@
   }
 }
 
+@media (max-width: 630px) {
+  .project-tab {
+    flex: 1;
+  }
+
+  .project-panels {
+    height: auto;
+    border-radius: 0 0 30px 30px;
+  }
+}
+
 @media (max-width: 600px) {
   .hero-photo {
     width: 400px;
@@ -107,17 +118,6 @@
     height: 36px;
   }
 
-}
-
-@media (max-width: 570px) {
-  .project-panels {
-    height: auto;
-    border-radius: 0 0 30px 30px;
-  }
-
-  .project-tab {
-    flex: 1;
-  }
 }
 
 @media (max-width: 550px) {
